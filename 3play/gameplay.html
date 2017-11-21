@@ -1,0 +1,1171 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="i/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+
+    <!-- iPhone 5 -->
+    <link href="i/apple-touch-startup-image-640x1096.png" rel="apple-touch-startup-image">
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>
+
+     <link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?v=201401310325&css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css,fonts/bentonsanscond.css,fonts/bentonsanscondbold.css,fonts/bentonsanscondmedium.css" />
+
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+     <link type="text/css" rel="stylesheet" href="css/jquery.qtip.min.css" />
+
+    <title>3Play Gameplay</title>
+
+  </head>
+  <body>
+    
+    <style>
+
+    @font-face {
+  font-family: 'ESPNIcons';
+  src: url('css/fonts/ESPNIconsBETATwelve.eot'); /* IE9 Compat Modes */
+  src: url('css/fonts/ESPNIconsBETATwelve.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('css/fonts/ESPNIconsBETATwelve.woff') format('woff'), /* Modern Browsers */
+       url('css/fonts/ESPNIconsBETATwelve.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('css/fonts/ESPNIconsBETATwelve.svg') format('svg'); /* Legacy iOS */
+  }
+
+
+    body {background-color:#f1f2f3; font-family:BentonSans; font-size:14px;}
+    
+    header {background-color:#666;height:65px;border-bottom:2px solid #fff200; position:relative; overflow:hidden;}
+    header h3{text-align:center; color:#fff; font-size:1.2em; line-height:42px; margin:23px 0 0 0; font-weight:normal;}
+    header #btn-submit{position:absolute; right:10px; top:23px; line-height:42px; color:#ccc; font-size:1.2em; text-decoration:none; pointer-events:none; z-index:20000;}
+    
+    .outer-container {overflow:hidden;}
+
+    .mini-card-container-outer {margin:16px 0 8px 8px; position:relative; height:96px;}
+    .mini-card-container-inner {display:table; width:100%; table-layout: fixed;}
+    .mini-card-cell {display:table-cell; vertical-align:top;}
+    .mini-card-slot-container {margin-right:8px;}
+    .mini-card-slot {background-color:#d7d8d9; height:96px; border-radius:3px; -webkit-box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.2); -moz-box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.2); box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.2);  background-repeat: no-repeat; background-position:50% 50%; background-size:cover; padding:3px; box-sizing:border-box; overflow:hidden; position:relative; display:none; -webkit-animation-duration:.1s;}
+
+    .mini-card-slot#slot-1 {background-image:url(i/slot-1.png);}
+    .mini-card-slot#slot-2 {background-image:url(i/slot-2.png);}
+    .mini-card-slot#slot-3 {background-image:url(i/slot-3.png);}
+
+    .confirm-button {border-radius:3px; background-color:rgba(255,255,255,.8); display:block; overflow:hidden; position:absolute; z-index:3; top:3px; left:3px; bottom:3px; right:3px; display:none;}
+    .confirm-button i {display:block; margin:0 auto; line-height:90px; text-align:center; color:#4d4d4f;}
+    .confirm-button i:before {padding: 10px;background-color: rgba(255,255,255,.8); border-radius: 3px;}
+
+    .mini-card {height:90px; border-radius:3px; background-color:#fff; display:none; overflow:hidden; position:relative; z-index:2;}
+    .mini-card .prop-name {font-size:10px; text-align:center; line-height:19px; margin:0; background-color:#fff;}
+    .mini-card .prop-details p {color:#fff; text-align:center;}
+    .mini-card .prop-details p.prop-value {font-size:22px; margin:6px 0 0;}
+    .mini-card .prop-details p.prop-category {font-size:12px; margin:0;}
+    .mini-card .prop-details p.more-less {font-size:12px; margin:0;}
+
+    .full-card-container {padding:8px 0 0 0; overflow:hidden;}
+
+    
+    #cards-carousel {opacity:0;  -webkit-transition: opacity .5s;}
+
+    
+    .card-container {perspective: 1000; overflow:hidden;}
+
+     /* Card Stat Flipping */
+    
+    .flipper {transition: 0.3s; -webkit-transform-style: preserve-3d; position: relative; height:335px;}
+    .card-container.flip .flipper {-webkit-transform: rotateY(180deg);}
+    .flipper .front, .flipper .back {width:100%;}
+    .card {border-radius:3px; background-color:#fff; overflow:hidden; height:325px; position:relative; -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.44); -moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.44); box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.44); margin:0 8px 6px 8px; color:#333; border:2px solid #af1e2c; opacity:0;  -webkit-transition: .2s;  -webkit-transition-delay: .2s;}
+
+    /* hide back of pane during swap */
+    .flipper .front, .flipper .back {-webkit-backface-visibility: hidden; position: absolute; top:0; left:0;}
+    /* front pane, placed above back */
+    .flipper .front {z-index: 2;/* for firefox 31 */transform: rotateY(0deg);}
+    /* back, initially hidden pane */
+    .flipper .back {-webkit-transform: rotateY(180deg);}
+
+
+    .slick-active .card {opacity:1;}
+    .card-top {height:115px; background-color:#af1e2c; position:relative; -webkit-backface-visibility: hidden;} 
+    .card-top:before {content:""; background-color:#fff; width:600px; height:100px; position:absolute; top:115px; left:-10px; -webkit-transform:rotate(4deg); z-index:5;}
+    .card-top .headshot {display:block; width:180px; margin: 0 auto; position:relative; z-index:4;}
+    .card-top .team-logo {position:absolute; top: -25px; left:-20px; opacity:.2; z-index:3; width:150px;}
+    .card .fa-bar-chart { position: absolute;top: 6px;left: 6px;color: #fff; z-index: 10; opacity:.8; padding:6px;}
+
+    .card-bottom {position:relative; z-index:6; top:0px;}
+    .card .prop-name {text-align:center; font-family:Bentonsans; font-weight:normal; font-size:16px; margin:0;}
+    .card .prop-position {text-align:center; font-family:Bentonsans; font-weight:normal; font-size:11px; margin:0; color:#a9a9a9;}
+    .card .prop-value {text-align:center; font-family:Bentonsans; font-weight:normal; font-size:28px; margin:0 0 0 0; position:absolute; width:100%; line-height:40px;}
+    .card .prop-category {text-align:center; font-family:Bentonsans; font-weight:normal; font-size:13px; margin:16px 0 10px 0;}
+
+    .card .prop-btn-group {overflow:hidden; height:66px; position:relative; z-index:7;}
+    .card .prop-btn-group a {display:block; line-height:40px; background-color: #fff; color:#b2b2b2; text-align:center; font-family: FontAwesome; font-size: 14px; text-rendering: auto; -webkit-font-smoothing: antialiased; -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.44); -moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.44); margin-bottom:4px; pointer-events:none; text-decoration:none; position:relative; z-index:2; -webkit-transition: all .2s; border:1px solid #b2b2b2;}
+
+    .card .prop-btn-group a.selected {background-color:#182E4D !important; color:#fff !important; border-color:#182E4D !important; -webkit-animation: none}
+    .card .prop-btn-group a.unselected {background-color:#fff !important; color:#b2b2b2 !important; border-color:#b2b2b2 !important; -webkit-animation: none;}
+
+    .card .prop-btn-group .btn-or-less {float:left; width:25%; margin-left:14px; border-radius:3px;}
+    .card .prop-btn-group .btn-or-more {float:right; width:25%; margin-right:14px; border-radius:3px;}
+    .card .prop-btn-group .btn-or-less:before {content:"\f068";}
+    .card .prop-btn-group .btn-or-more:before {content:"\f067";}
+    .card .prop-btn-group .btn-or-less:after, .card .prop-btn-group .btn-or-more:after {position:absolute; left:0; bottom:-20px; line-height:12px; color:#999; font-size:12px; font-family:bentonsans; width:100%;}
+    .card .prop-btn-group .btn-or-less:after {content:"Or Less";}
+    .card .prop-btn-group .btn-or-more:after {content:"Or More";}
+
+    .game-info-outer {margin:6px 14px 8px; padding:8px 0 0; vertical-align:top; border-top: 1px solid #eee;}
+    .game-info {display:table; width:100%; table-layout: fixed; vertical-align:top; font-size:11px; color:#999;}
+    .game-info .game-cell {display:table-cell; vertical-align:top;}
+    .game-info .game-details {width:50%; vertical-align:middle;}
+    .game-info .game-details p{text-align:center; margin:0;}
+    .game-info .game-details p.network{font-family:bentonsansmedium;}
+    .game-info .team-cell .team-logo {width:25px; display:block; margin:0 auto;}
+    .game-info .team-cell p {text-align:center; margin:0;}
+    .game-info .team-away {width:25%;}
+    .game-info .team-home {width:25%;}
+
+    .card-container .cancel-remove-pick {display:none; text-align:center; color: #e53935; margin: 0px 8px 0;line-height: 30px; background-color: transparent; border-radius: 3px;}
+
+     #confirm-modal {position:absolute; top:100px; bottom:200px; left:50px; right:50px; background-color:rgba(0,0,0,.8); display:none; z-index:10;}
+     #confirm-modal p {text-align:center; color:#fff; font-size:24px; position:relative; top:50px;}
+
+     .card-container.beenintroduced .card {opacity:1;}
+
+    .loading-messages {position:absolute; top:0; left:-8px; right:0; bottom:0; z-index:2; height:96px; color:#666; pointer-events:none; display:none; -webkit-animation-duration:.2s; }
+    .loading-messages img {display:block; max-width:320px; margin:0 auto;}
+    .loading-messages p {text-align:center; font-family:Bentonsans; font-size:21px; line-height:22px; margin:0; color:#666; margin:3px 0 0;}
+    .loading-messages p span{font-family:Bentonsans; font-size:14px; color:#999; line-height:14px;}
+    .loading-messages p.msg-play {display:none;}
+
+
+    /* ANIMATIONS */
+    /*@-webkit-keyframes colorPulse { 0% {background-color: #f1f2f3;} 50% {background-color: #eee;} 100% {background-color: #f1f2f3;} }*/
+
+    /* MEDIA QUERIES */
+
+    
+    /* IPHONE 6 */
+
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) 
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 2)
+    { 
+    }
+
+    /* IPHONE 6+ */
+
+    @media only screen 
+    and (min-width : 414px) 
+    { 
+
+    header {background-color:#666;height:93px;border-bottom:2px solid #fff200; position:relative; overflow:hidden;}
+    header h3{text-align:center; color:#fff; font-size:1.2em; line-height:66px; margin:27px 0 0 0; font-weight:normal;}
+    header #btn-submit{position:absolute; right:10px; top:27px; line-height:66px; color:#ccc; font-size:1.2em; text-decoration:none; pointer-events:none;}
+
+    }
+
+
+    </style>
+
+    <header>
+      <h3>NFL Players</h3>
+      <a href="#" id="btn-submit">Submit</a>
+    </header>
+
+
+    <section class="outer-container">
+
+         <div class="mini-card-container-outer">
+         
+         <style>
+  
+         </style>
+
+         <div class="loading-messages">
+            <img src="i/shield-nfl-small-lines.png">
+            <p class="msg-loading-cards" style="color:#43a951">NFL Players<br><span>Loading Cards...</span></p>
+            <p class="msg-play">Play Now!</p>
+
+         </div>
+
+
+         <div class="mini-card-container-inner">
+            <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-1">
+                  
+                  <div class="confirm-button" id="confirm-slot-1">
+
+                     <i class="fa fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-1" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+             <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-2">
+
+                  <div class="confirm-button" id="confirm-slot-2">
+
+                      <i class="fa fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-2" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+            </div>
+
+             <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-3">
+
+                  <div class="confirm-button" id="confirm-slot-3">
+
+                     <i class="fa fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-3" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+           
+         </div>
+        </div>
+
+        <div class="full-card-container">
+          
+          <div class="cards-carousel" id="cards-carousel">
+          
+          <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-0">
+           <div class="card-top" style="background-color:#af1e2c">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14001.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sf.png?w=500&h=500&transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Colin Kaepernick</h4>
+          <h5 class="prop-position">Quarterback</h5>
+          <h3 class="prop-category">Passing Yards</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">219.5</h2>
+            <a href="#" class="btn-or-less" data-prop='["0", "Colin Kaepernick", "219", "Passing Yards", "Or Less", "#af1e2c"]'></a> <a href="#" class="btn-or-more" data-prop='["0", "Colin Kaepernick", "219", "Passing Yards", "Or More", "#af1e2c"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/atl.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+            <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sf.png?w=80&h=80&transparent=true" /><p>SF</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-0">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-0">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["0"]' id="remove-0"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+          <div class="card-container">
+           
+            <div class="card" style="border-color:#000" id="card-1">
+              <div class="card-top" style="background-color:#000000">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/5536.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/pit.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Ben Roethlisberger</h4>
+              <h5 class="prop-position">Quarterback</h5>   
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <h2 class="prop-value">219</h2>
+                <a href="#" class="btn-or-less" data-prop='["1", "Ben Roethlisberger", "300", "Passing Yards", "Or Less", "#000"]'></a> <a href="#" class="btn-or-more" data-prop='["1", "Ben Roethlisberger", "300", "Passing Yards", "Or More", "#000"]'></a>
+              </div>
+                <div class="game-info-outer">
+              <div class="game-info">
+                <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/pit.png?w=80&h=80&transparent=true" /><p>PIT</p></div>
+                <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+                <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ind.png?w=80&h=80&transparent=true" /><p>IND</p></div>
+              </div>
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-1">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["1"]' id="remove-1"><i class="fa fa-times"></i> Remove Pick</a>
+
+          </div>
+
+           <div class="card-container">
+           
+            <div class="card" style="border-color:#224970" id="card-2">
+              <div class="card-top" style="background-color:#224970">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14881.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sea.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Russell Wilson</h4>
+              <h5 class="prop-position">Quarterback</h5>
+              
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <h2 class="prop-value">330</h2>
+                <a href="#" class="btn-or-less" data-prop='["2", "Russell Wilson", "330", "Passing Yards", "Or Less", "#224970"]'></a> <a href="#" class="btn-or-more" data-prop='["2", "Russell Wilson", "330", "Passing Yards", "Or More", "#224970"]'></a>
+              </div>
+                <div class="game-info-outer">
+              <div class="game-info">
+                <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sea.png?w=80&h=80&transparent=true" /><p>SEA</p></div>
+                <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+                <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png?w=80&h=80&transparent=true" /><p>GB</p></div>
+              </div>
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-2">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["2"]' id="remove-2"><i class="fa fa-times"></i> Remove Pick</a>
+
+          </div>
+
+           <div class="card-container">
+           
+            <div class="card" style="border-color:#224970" id="card-3">
+              <div class="card-top" style="background-color:#224970">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/10456.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sea.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Marshawn Lynch</h4>
+              <h5 class="prop-position">Running Back</h5>
+              
+              <h3 class="prop-category">Rushing Yards</h3>
+              <div class="prop-btn-group">
+                <h2 class="prop-value">97</h2>
+                <a href="#" class="btn-or-less" data-prop='["3", "Marshawn Lynch", "97", "Rushing Yards", "Or Less", "#224970"]'></a> <a href="#" class="btn-or-more" data-prop='["3", "Marshawn Lynch", "97", "Rushing Yards", "Or More", "#224970"]'></a>
+              </div>
+               <div class="game-info-outer">
+              <div class="game-info">
+                <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sea.png?w=80&h=80&transparent=true" /><p>SEA</p></div>
+                <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+                <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/gb.png?w=80&h=80&transparent=true" /><p>GB</p></div>
+              </div>
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-3">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["3"]' id="remove-3"><i class="fa fa-times"></i> Remove Pick</a>
+
+          </div>
+
+           <div class="card-container">
+           
+            <div class="card" style="border-color:#4C230E" id="card-4">
+              <div class="card-top" style="background-color:#4C230E">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/16736.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/cle.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Johnny Manziel</h4>
+              <h5 class="prop-position">Quarterback</h5>
+             
+              <h3 class="prop-category">Days in Rehab</h3>
+              <div class="prop-btn-group">
+                 <h2 class="prop-value">34</h2>
+                <a href="#" class="btn-or-less" data-prop='["4", "Johnny Manziel", "34", "Days in Rehab", "Or Less", "#4C230E"]'></a> <a href="#" class="btn-or-more" data-prop='["4", "Johnny Manziel", "34", "Days in Rehab", "Or More", "#4C230E"]'></a>
+              </div>
+                <div class="game-info-outer">
+              <div class="game-info">
+                <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/cle.png?w=80&h=80&transparent=true" /><p>CLE</p></div>
+                <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+                <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/cin.png?w=80&h=80&transparent=true" /><p>CIN</p></div>
+              </div>
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-4">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["4"]' id="remove-4"><i class="fa fa-times"></i> Remove Pick</a>
+
+          </div>
+
+          <div class="card-container">
+           
+            <div class="card" style="border-color:#052570" id="card-5">
+              <div class="card-top" style="background-color:#052570">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/5526.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500-dark/nyg.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Eli Manning</h4>
+              <h5 class="prop-position">Quarterback</h5>
+              
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <h2 class="prop-value">340</h2>
+                <a href="#" class="btn-or-less" data-prop='["5", "Eli Manning", "340", "Passing Yards", "Or Less", "#052570"]'></a> <a href="#" class="btn-or-more" data-prop='["5", "Eli Manning", "340", "Passing Yards", "Or More", "#052570"]'></a>
+              </div>
+                <div class="game-info-outer">
+              <div class="game-info">
+                <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/nyg.png?w=80&h=80&transparent=true" /><p>NYG</p></div>
+                <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+                <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/dal.png?w=80&h=80&transparent=true" /><p>DAL</p></div>
+              </div>
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-5">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["5"]' id="remove-5"><i class="fa fa-times"></i> Remove Pick</a>
+
+          </div>
+
+          <div class="card-container">
+           
+            <div class="card" style="border-color:#002E4D" id="card-6">
+              <div class="card-top" style="background-color:#002E4D">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14005.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/dal.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">DeMarco Murray</h4>
+              <h5 class="prop-position">Running Back</h5>
+             
+              <h3 class="prop-category">Rushing Yards</h3>
+              <div class="prop-btn-group">
+                 <h2 class="prop-value">120</h2>
+                <a href="#" class="btn-or-less" data-prop='["6", "DeMarco Murray", "120", "Rushing Yards", "Or Less", "#002E4D"]'></a> <a href="#" class="btn-or-more" data-prop='["6", "DeMarco Murray", "120", "Rushing Yards", "Or More", "#002E4D"]'></a>
+              </div>
+                <div class="game-info-outer">
+              <div class="game-info">
+                <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/nyg.png?w=80&h=80&transparent=true" /><p>NYG</p></div>
+                <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+                <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/dal.png?w=80&h=80&transparent=true" /><p>DAL</p></div>
+              </div>
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-6">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["6"]' id="remove-6"><i class="fa fa-times"></i> Remove Pick</a>
+
+          </div>
+
+           <div class="card-container">
+           
+            <div class="card" style="border-color:#02244A" id="card-7">
+              <div class="card-top" style="background-color:#002E4D">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2330.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Tom Brady</h4>
+              <h5 class="prop-position">Quarterback</h5>
+              
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <h2 class="prop-value">278</h2>
+                <a href="#" class="btn-or-less" data-prop='["7", "Tom Brady", "270", "Passing Yards", "Or Less", "#02244A"]'></a> <a href="#" class="btn-or-more" data-prop='["7", "Tom Brady", "270", "Passing Yards", "Or More", "#02244A"]'></a>
+              </div>
+                <div class="game-info-outer">
+              <div class="game-info">
+                <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/nyj.png?w=80&h=80&transparent=true" /><p>NYJ</p></div>
+                <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+                <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/ne.png?w=80&h=80&transparent=true" /><p>NE</p></div>
+              </div>
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-7">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["7"]' id="remove-7"><i class="fa fa-times"></i> Remove Pick</a>
+
+          </div>
+
+          <div class="card-container">
+           
+            <div class="card sponsored locked" style="border-color:#06424D" id="card-8">
+
+
+              <!--
+              <div class="advertisement">
+
+              </div>
+            -->
+
+
+              <div class="card-top" style="background-color:#06424D">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/12514.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/phi.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">LeSean McCoy</h4>
+              <h5 class="prop-position">Running Back</h5>
+              
+              <h3 class="prop-category">Rushing Yards</h3>
+              <div class="prop-btn-group">
+                <h2 class="prop-value">100</h2>
+                <a href="#" class="btn-or-less" data-prop='["8", "LeSean McCoy", "100", "Rushing Yards", "Or Less", "#06424D"]'></a> <a href="#" class="btn-or-more" data-prop='["8", "LeSean McCoy", "100", "Rushing Yards", "Or More", "#06424D"]'></a>
+              </div>
+                <div class="game-info-outer">
+              <div class="game-info">
+                <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/phi.png?w=80&h=80&transparent=true" /><p>PHI</p></div>
+                <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+                <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/wsh.png?w=80&h=80&transparent=true" /><p>WSH</p></div>
+              </div>
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-8">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["8"]' id="remove-8"><i class="fa fa-times"></i> Remove Pick</a>
+
+          </div>
+
+
+          </div>
+        </div>
+
+    </section>
+
+ 
+    
+     <script src="js/jquery-2.1.3.min.js"></script>
+     <script src="js/jquery.mobile.custom.min.js"></script>
+     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+     <script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+
+     <script>
+
+     $( document ).ready(function() {
+
+
+     /* GLOBAL VARIABLES */
+
+    // variable to track filled mini card slots
+
+    var slot1Status = "";
+    var slot2Status = "";
+    var slot3Status = "";
+
+    
+    var currentContainer = "";
+    var currentCardID = "";
+
+    var nextOpenSlot = "";
+    var nextMiniCard = "";
+
+    var slotsFull = "false";
+
+    var currentCard = "";
+
+    var removeId = "";
+    var currentAction = "default";
+    var replacing = "false";
+    var swapping = "false";
+    var slotRemovedFrom = "";
+
+    var SwappedDataID = "";
+
+    // option to skip initial confirmations
+    var skipConfirmation = "true";
+
+      // skip loading animation
+    var skipLoading = "false";
+
+    // current pick variables
+    var propId = "";
+    var playerName = "";
+    var propValue = "";
+    var propCat = "";
+    var propLessMore = "";
+    var propHex = "";
+
+    // tooltip tracking
+    var showedSubmitTT = "false";
+
+
+	   // build carousel and add click bindings 
+
+     var buildCarousel = function(){
+
+  		// Remove Loading Classes on Cards
+        $('#cards-carousel .card-container').css("display", "block");
+
+        $('#cards-carousel').slick({
+            arrows: false,
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            speed: 200,
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '100px',
+                  slidesToShow: 1
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '25px',
+                  slidesToShow: 1
+                  }
+                },
+              {
+                breakpoint: 415,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '72px',
+                  slidesToShow: 1,
+                 } 
+                },
+                {
+                breakpoint: 376,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '52px',
+                  slidesToShow: 1,
+                  }
+                },
+                {
+                breakpoint: 321,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '25px',
+                  slidesToShow: 1,
+                }
+              }
+            ]
+        });
+
+
+      /* CLICK EVENTS */
+
+     $('body').on('tap', '.prop-btn-group a', function(){     
+
+       var propData = $(this).data("prop");
+       popPick(propData);
+      
+      });
+
+
+      $('body').on('tap', '.cancel-pick', function(){ 
+
+           cancelPick();
+
+      });
+
+
+      $('body').on('tap', '.remove-pick', function(){ 
+
+           var removeData = $(this).data("remove");
+           removePick(removeData);
+
+      });
+
+
+
+      $('body').on('tap', '.confirm-button', function(){ 
+
+           var propSlot = $(this).attr('id');
+           confirmPick(propSlot);
+
+      });
+
+
+      $('body').on('tap', '.mini-card', function(){ 
+
+           var slideTo = $(this).attr('data-id');
+           $('#cards-carousel').slick('slickGoTo',slideTo);
+
+      });
+
+      $('body').on('tap', 'header #btn-submit', function(){
+           $('#confirm-modal').show();
+      });
+
+      $('body').on('tap', '#confirm-modal a', function(){
+           $('#confirm-modal').hide();
+      });
+
+      $('body').on('tap', '.fa-bar-chart', function(){
+           $(this).parents('.card-container').toggleClass('flip');
+      });
+
+      $('body').on('tap', '.flip-close', function(){
+           $(this).parents('.card-container').toggleClass('flip');
+      });
+
+
+      // on swipe of carousel call Cancel function to cancel any active pick
+      
+        $('#cards-carousel').on('swipe', function(event, slick, direction){
+            if (currentAction == "picking") {
+            cancelPick();
+             }
+        });
+
+	   }
+
+
+     var animateSlots =function() {
+      
+      $('.loading-messages').removeClass('animated zoomIn');
+      $('.loading-messages').addClass('animated zoomOut');
+      $('.loading-messages').css('display', 'none');
+
+      $('.mini-card-slot').each(function(i) {
+        
+        //console.log($(this));
+        var miniSlotAnimating = $(this);
+        // console.log(miniSlotAnimating);
+        
+        setTimeout(function () { miniSlotAnimating,
+           
+           $(miniSlotAnimating).css('display', 'block');
+           $(miniSlotAnimating).addClass('animated zoomIn');
+
+           }, i*100);
+
+        setTimeout(function(){$('.mini-card-slot').removeClass('animated zoomIn');},400);  
+      });
+
+      }
+
+
+     var entranceAnimation = function(){
+
+     
+     $('.loading-messages').css('display', 'block');
+     $('.loading-messages').addClass('animated zoomIn');
+
+
+     $('#cards-carousel').css("opacity","1");
+
+     // disable swiping of carousel during entrance animation
+     $('#cards-carousel').slick("slickSetOption", "swipe", false, false);
+
+
+     // hard code the count for now
+     var cardCount = $('#cards-carousel .card-container').not( ".slick-cloned,.slick-active" ).length-1;
+
+     setTimeout(function(){
+
+     $('#cards-carousel .card-container').not( ".slick-cloned,.slick-active").each(function(i) {
+        setTimeout(function(){
+        var currentSlide = $('#cards-carousel').slick('slickCurrentSlide');
+        var prevSlide = currentSlide;
+        var nextSlide = currentSlide + 3;
+        $('#cards-carousel .card-container').filter('[data-slick-index="'+prevSlide+'"]').addClass('beenintroduced');    
+        $('#cards-carousel').slick('slickNext'); 
+        if (i==(cardCount - 1)) {
+          console.log(nextSlide);
+          $('#cards-carousel .card-container').filter('[data-slick-index="'+nextSlide+'"]').addClass('beenintroduced');
+        }
+        if (i==(cardCount)) {
+          $('#cards-carousel .card-container').addClass('beenintroduced');
+          $('.card .prop-btn-group a').css('pointer-events','auto');
+          $('#cards-carousel').slick("slickSetOption", "swipe", true, false);
+          $('#cards-carousel').slick("slickSetOption", "speed", "600", false);
+          setTimeout(function(){animateSlots()},1000);
+          setTimeout(function(){$('.card .prop-btn-group a').css({'background-color':'#3f79cd','color':'#fff','border-color':'#3f79cd'});},1800);
+        }
+           // adjust speed of card entrances
+           }, i*500);  
+      });
+      }, 1000);
+
+     }
+
+  
+  // for debugging, skip the loading animation
+
+  if (skipLoading == "false") {
+
+     buildCarousel();
+     
+     setTimeout(function(){entranceAnimation()},1000);
+
+   } else {
+
+    buildCarousel();
+    $('#cards-carousel').css("opacity","1");
+    $('#cards-carousel').slick("slickSetOption", "draggable", true, false);
+    $('#cards-carousel .card-container').addClass('beenintroduced');
+    $('.mini-card-slot').css('display', 'block');
+    $('.card .prop-btn-group a').css('pointer-events','auto');
+
+   }
+
+
+     /* FUNCTIONS */
+
+    var popPick = function(propData){
+
+      
+      currentAction="picking";
+
+      // Extrapolate Values in Array
+
+      propId = propData[0];
+      playerName = propData[1];
+      propValue = propData[2];
+      propCat = propData[3];
+      propLessMore = propData[4];
+      propHex = propData[5];
+      // console.log(propLessMore);
+
+      
+      // Update Buttons
+
+     // Get Buttons in Current Card
+
+     currentCard = "#card-"+propId;
+
+     
+     // Change Buttons based on less or more
+
+     if (propLessMore == "Or Less") {
+
+     $(currentCard + ' .btn-or-more').removeClass('selected');
+     $(currentCard + ' .btn-or-more').addClass('unselected');
+     $(currentCard + ' .btn-or-less').removeClass('unselected');
+     $(currentCard + ' .btn-or-less').addClass('selected');
+
+     }  else {
+
+     $(currentCard + ' .btn-or-less').removeClass('selected');
+     $(currentCard + ' .btn-or-less').addClass('unselected');
+     $(currentCard + ' .btn-or-more').removeClass('unselected');
+     $(currentCard + ' .btn-or-more').addClass('selected');
+
+
+     }
+
+    // check if the card is already selected. If true, set the card to swap out
+    
+    if (propId == slot1Status) {
+        replacing = "true";
+        nextMiniCard = "#mini-card-1";
+      } else if (propId == slot2Status){
+        replacing = "true";
+        nextMiniCard = "#mini-card-2";
+    } else if (propId == slot3Status){
+        replacing = "true";
+        nextMiniCard = "#mini-card-3"; 
+    } else { 
+       replacing = "false";
+    }
+
+    // console.log(nextMiniCard);
+
+
+    if (replacing == "false") {
+    
+    // Identify Confirm Buttons to Be shown. Check Global Variable. If they're all filled exit the function and enter the swap/replace function
+
+    if (slot1Status == "") { nextOpenSlot = "#confirm-slot-1";}
+    if ((slot1Status != "") && (slot2Status == "")) { nextOpenSlot = "#confirm-slot-2";}
+    if ((slot1Status != "") && (slot2Status != "")) { nextOpenSlot = "#confirm-slot-3"; }
+    if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { swapping = "true"; }
+
+
+    // Identify Mini Cards to Build. Check Global Variable.  If they're all filled exit the function to the swap function
+
+    if (slot1Status == "") { nextMiniCard = "#mini-card-1"; }
+    if ((slot1Status != "") && (slot2Status == "")) { nextMiniCard = "#mini-card-2"; }
+    if ((slot1Status != "") && (slot2Status != "")) { nextMiniCard = "#mini-card-3"; }
+    if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { swap(propId); return false; }
+
+    }
+
+
+    // if we choose to skip the confirmations on initial picks then just confirm the pick. based on skipConfirmation variable
+
+    if ((skipConfirmation != "true" || slotsFull == "true") && replacing == "false") {
+      showConfirm(propId,"false");
+      } else {
+        confirmPick();
+      }
+    }
+
+
+    var showConfirm = function(propId){     
+
+
+     if (slotsFull == "false") {
+     $('#cancel-'+propId).css('display', 'block');
+     $(nextOpenSlot).css('display', 'block');
+     $(nextOpenSlot).removeClass('animated flipOutX');
+     $(nextOpenSlot).addClass('animated flipInX'); 
+
+      } else {
+     $('#cancel-'+propId).css('display', 'block');
+     $(".confirm-button").css('display', 'block');
+     $(".confirm-button").removeClass('animated flipOutX');
+     $(".confirm-button").addClass('animated flipInX'); 
+
+      }
+  
+    }
+
+
+    // function to handle swapping or replacing a card. Might be just be a delegate function
+
+
+    var swap = function(propId){
+
+      showConfirm(propId,"true");
+    //  console.log("swapReplace");
+
+    }
+
+
+    var confirmPick = function(propSlot){     
+
+    currentAction="default";
+
+    if (swapping == "true") {
+     nextMiniCard = $('#'+propSlot).siblings('.mini-card').attr("id");
+     nextMiniCard = "#"+nextMiniCard;
+
+      // Remove Previous Mini Card
+     SwappedDataID = $(nextMiniCard).attr("data-id");
+     removePick("",SwappedDataID);
+    
+    }
+     
+    // Build Mini Card
+
+    $(nextMiniCard + ' p.prop-name').html(playerName);
+    $(nextMiniCard + ' p.prop-value').html(propValue);
+    $(nextMiniCard + ' p.prop-category').html(propCat);
+    $(nextMiniCard + ' p.more-less').html(propLessMore);
+    $(nextMiniCard).css('background-color', propHex);
+    $(nextMiniCard).attr("data-id",propId);
+
+
+     // current slot id
+
+    currentContainer = $(nextMiniCard).parent().attr("id");
+    currentCardID = $(nextMiniCard).attr("data-id");
+
+
+    // show a little animation that indicates the card is changing
+    if (replacing == "true") {
+      
+      $('.confirm-button').css('display', 'none');
+      $(nextMiniCard).removeClass('animated bounceInDown');
+      $(nextMiniCard).removeClass('animated flipInY');
+      $(nextMiniCard).addClass('animated flipInY');
+      setTimeout(function(){$(nextMiniCard).removeClass('animated flipInY');},1000);
+    
+    } else {
+
+     $('.confirm-button').css('display', 'none');
+     $(nextMiniCard).css('display', 'block');
+     $(nextMiniCard).removeClass('animated bounceOutUp');
+     $(nextMiniCard).addClass('animated bounceInDown');
+
+    }
+     
+
+     $('.cancel-pick').css('display', 'none');
+     
+     // Show only current remove button
+
+     $('#remove-'+currentCardID).css('display', 'block');
+
+
+     // Update global slots variables so we know which one has picks
+
+     if (currentContainer == "slot-1") { 
+        slot1Status = currentCardID;
+      } else if (currentContainer == "slot-2") { 
+        slot2Status = currentCardID; 
+      } else if (currentContainer == "slot-3") { 
+        slot3Status = currentCardID;
+     }
+
+     checkifComplete();
+
+    }
+
+
+    var checkifComplete = function(){
+
+       if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { 
+          $('#btn-submit').css("color","#fff200");
+          $('#btn-submit').css("pointer-events", "auto");
+          slotsFull=true;
+
+          // if ready to submit and haven't shown tooltip yet, show it
+          if (showedSubmitTT == "false") {
+            setTimeout(function(){$('header #btn-submit').qtip('toggle', true);},2000);
+           // console.log(showedSubmitTT);
+            showedSubmitTT = "true";
+          }
+
+       } else {
+          $('#btn-submit').css("color","#ccc");
+          $('#btn-submit').css("pointer-events", "none");
+          slotsFull=false;
+      }
+
+       // RESET STATES
+       replacing="false";
+       swapping="false";
+
+    } 
+
+    var cancelPick = function(){     
+     $(currentCard + ' .btn-or-more').removeClass('selected unselected');
+     $(currentCard + ' .btn-or-less').removeClass('selected unselected');
+     $('.cancel-pick').css('display', 'none');
+     $('.confirm-button').removeClass('flipInX');
+     $('.confirm-button').addClass('flipOutX');
+
+     // RESET STATES
+      replacing="false";
+      swapping="false";
+    }
+
+     
+     var removePick = function(removeData, cardGettingSwapped){     
+     
+     
+     // IF SWAPPING THE CARD SET THE CARD TO BE REMOVED TO THE PREVIOUS OCCUPIED CARD
+
+     if (swapping == "true") {
+      removeId = cardGettingSwapped;      
+     } else {
+      removeId = removeData[0];
+     }
+     
+
+    slotRemovedFrom = $('.mini-card[data-id=' + removeId + ']').parent().attr("id");
+
+    // Update global slots variables so we know which one has picks
+
+     if (slotRemovedFrom == "slot-1") { 
+        slot1Status = "";
+      } else if (slotRemovedFrom == "slot-2") { 
+        slot2Status = ""; 
+      } else if (slotRemovedFrom == "slot-3") { 
+        slot3Status = "";
+     }
+
+
+     $('#card-' +removeId + ' .btn-or-less').removeClass('selected unselected');
+     $('#card-' +removeId + ' .btn-or-more').removeClass('selected unselected');
+     var removeLink = '#remove-' +removeId;
+     $(removeLink).css('display', 'none');
+
+     $('.mini-card[data-id=' + removeId + ']').removeClass('animated bounceInDown');
+     $('.mini-card[data-id=' + removeId + ']').addClass('animated bounceOutUp');
+    
+     checkifComplete();
+
+    }
+
+
+   // CREATE THE HELPER TOOLTIPS
+   $('header #btn-submit').qtip({ // Grab some elements to apply the tooltip to
+    show: {
+        event: 'false',
+       // modal: true,
+    },
+    content: {
+        text: 'Tap to Submit, or Change Your Picks'
+    },
+    style: {
+        classes: 'qtip-dark'
+    },
+     position: {
+        my: 'center right',  // Position my top left...
+        at: 'center left', // at the bottom right of...
+        target: $('header #btn-submit'), // my target
+         adjust: {
+            x: -10
+        }
+    },
+    hide: {
+        event: false,
+        inactive: 4000
+    }
+    })
+
+   var toolTipAPI = $('header #btn-submit').qtip('api');
+
+   });
+
+
+
+     </script>
+
+     <div id="confirm-modal">
+      <p>Nice Picks Bro! <br><a href="#">Close</a></p>
+     </div>
+     
+  </body>
+</html>

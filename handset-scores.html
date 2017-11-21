@@ -1,0 +1,539 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=no" />
+    <title>ESPN - Slideout Scores Prototype</title>
+    <link rel="stylesheet" href="../foundation/css/foundation-dp.css" />
+    <link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?v=201401310325&css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css,fonts/bentonsanscond.css,fonts/bentonsanscondbold.css,fonts/bentonsanscondmedium.css" />
+     <link rel="stylesheet" type="text/css" href="css/dropdowns/style.css" />
+    <script src="../foundation/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    
+	<!-- FP Scoreboard -->
+<div class="off-canvas-wrap">
+<div class="inner-wrap">
+
+<div>
+
+<style>
+.main-nav {background-color:#231f20; height:60px;}
+.right-off-canvas-toggle {position:absolute; right:15px; color:#fff; line-height:30px; font-size:12px; border:1px solid #fff; padding:0 10px; margin:13px 0 0 0; -webkit-border-radius:3px; -webkit-transition: all 0.4s ease-in;}
+.right-off-canvas-toggle.hideit {opacity:0;}
+.back-button {width:25px; height:25px; position:absolute; right:-500px; display:block; -webkit-transition: all 0.5s ease-in; background: transparent url(i/back-button.png) 0 0 no-repeat; background-size:cover; top:16px;}
+.back-button.showit {width:25px; height:25px; position:absolute; right:12px; display:block;}
+.right-off-canvas-menu {background-color:#E5E5E4}
+.exit-off-canvas {}
+.scores-label {float:left; width:70px; text-align:center; color:#fff; padding:0 0 0 10px; font-size:12px; line-height:60px;}
+.dropdown {float:left;text-align:center; line-height:normal;}
+.wrapper-dropdown-3 {
+position: relative;
+width: 200px;
+margin: 10px auto 0 auto;
+padding: 10px;
+background: #fff;
+border-radius: 1px;
+border: 1px solid rgba(0,0,0,0.15);
+box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+cursor: pointer;
+outline: none;
+font-weight: normal;
+font-size:14px;
+color: #777;
+text-align:left;
+}
+.wrapper-dropdown-3 .dropdown {
+position: absolute;
+top: 120%;
+left: 0;
+right: 0;
+background: white;
+border-radius: inherit;
+border: 1px solid rgba(0,0,0,0.17);
+box-shadow: 0 0 5px rgba(0,0,0,0.1);
+font-weight: normal;
+-webkit-transition: all 0.1s ease-in;
+-moz-transition: all 0.5s ease-in;
+-ms-transition: all 0.5s ease-in;
+-o-transition: all 0.5s ease-in;
+transition: all 0.1s ease-in;
+list-style: none;
+opacity: 0;
+pointer-events: none;
+color:#666;
+}
+.wrapper-dropdown-3 .dropdown li a {color:#666; font-size:14px}
+
+.right-off-canvas-menu nav {background-color:#231f20; height:60px;}
+.right-off-canvas-menu a#sport-selector {display:block; line-height:38px; background-color: #F1F1F2; color:#333; margin:3px 0 0; font-size:14px; width:180px; text-align:left; padding:0 0 0 6px;}
+
+.wrapper-dropdown-3:after {
+content: "";
+width: 0;
+height: 0;
+position: absolute;
+right: 15px;
+top: 50%;
+margin-top: -3px;
+border-width: 6px 6px 0 6px;
+border-style: solid;
+border-color: #777 transparent;
+}
+
+</style>
+
+ <nav class="main-nav" data-topbar>
+    <section>ESPN</section>
+    <a class="right-off-canvas-toggle">Scores</a>
+    <a class="back-button"></a>
+  </nav>
+</div>
+
+          <div class="row" id="feed-row">
+            <!-- Shows -->
+            <div class="small-12 medium-7 large-7 columns">
+ 
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Plays</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Game Overview</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Photos</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Conversation</a></h5>
+              </div>
+              
+            </div>
+            <!-- End Shows -->
+ 
+            <!-- Feed -->
+ 
+            <div class="small-12 medium-5 large-5 columns">
+ 
+              <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+               <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+ 
+ 			 <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+               <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+ 
+ 			  <div class="panel">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+            </div>
+ 
+            <!-- End Feed -->
+ 
+          </div>
+
+ 
+    <!-- End Content -->
+ 
+  		
+  		<!-- Scores Drawer -->
+  		<style>
+
+  		</style>
+  		
+  		<aside class="right-off-canvas-menu">
+  		
+  		<div>
+ 			<nav>
+    		
+    		<section class="scores-label">SCORES</section>
+    		<section class="dropdown">
+    		<div id="dd" class="wrapper-dropdown-3" tabindex="1">
+						<span>Top Events</span>
+						<ul class="dropdown">
+							<li><a href="#">MLB</a></li>
+							<li><a href="#">NBA</a></li>
+							<li><a href="#">NCAAB</a></li>
+							<li><a href="#">Golf</a></li>
+						</ul>
+			</div>
+    		</section>
+    		<!--<section class="dropdown-native">
+    			
+    		</section>-->
+  			</nav>
+		</div>
+		
+		 <style>
+		 	.global-scoreboard {overflow:hidden; font-family:Bentonsans; background-color: #e5e5e5;}
+	.global-scoreboard ul, .global-scoreboard li {list-style:none; margin:0; padding:0}
+	.global-scoreboard p {font-size:11px; margin:0; padding:0;}
+	.global-scoreboard .sport-title{overflow:hidden; padding:10px}
+	.global-scoreboard .sport-title a {overflow:hidden; display:block}
+	.global-scoreboard .sport-title p {font-size:14px; color:#333; float:left;}
+	.global-scoreboard .sport-title span {display:block; float:right; font-size:10px; color:#666; margin: 4px 0 0 0}
+	.global-scoreboard .scores{overflow:hidden}
+	.global-scoreboard .score-chicklet{background-color:#FBFBFC; min-width:85px; overflow:hidden; border-top:1px solid #CDCDCC; padding:2px 0}
+	.global-scoreboard .score-chicklet:last-child{border-bottom:1px solid #CDCDCC;}
+	.global-scoreboard .score-chicklet:hover{cursor:pointer; background-color:#fff;}
+	.global-scoreboard .score-chicklet .game-meta {overflow:hidden; padding:2px 6px; float:left; margin: 6px 6px 0 0px;}
+	.global-scoreboard .score-chicklet .game-meta p {font-size:11px; line-height:10px; color:#666;}
+	.global-scoreboard .score-chicklet .game-meta .status {line-height: 11px; padding-bottom: 2px;}
+	.global-scoreboard .score-chicklet.final .game-meta .status {font-family:bentonsansmedium}
+	.global-scoreboard .score-chicklet.live .game-meta .status {color:#cc0000}
+	.global-scoreboard .score-chicklet .game-meta .tv {}
+	.global-scoreboard .score-chicklet .game-body {overflow:hidden; margin:6px 0px 6px 10px; float:left; width:165px; border-right:1px solid #cdcdcd; padding: 0 6px 0 0}
+	.score-chicklet .teams {float:left; overflow:hidden; margin:0 6px 0 0}
+	.score-chicklet .scores {float:right; overflow:hidden;}
+	.score-chicklet .scores .score {font-size:14px; line-height:22px; font-family:Bentonsansmedium; color:#333; text-align:right;}
+	.score-chicklet .scores .score.score-away {padding: 0 0 2px}
+	.score-chicklet .scores .score.loser {color:#999}
+	.score-chicklet .teams .team {font-size:14px; line-height:22px; font-family:Bentonsans; color:#333; overflow:hidden;}
+	.score-chicklet .teams .team.team-away {padding: 0 0 2px}
+	.score-chicklet .teams .team.loser {color:#999}
+	.score-chicklet .teams .team img {float:left; display:block; height: 22px; margin:0 3px 0 0;}
+	.score-chicklet .teams .team span {float:left; display:block; line-height:22px}
+	.score-chicklet .bases {background: transparent url(i/bases.png) 0 0 no-repeat; background-size:contain; width:30px; height:30px; float:right; margin: 12px 10px 0 0;}
+	
+	.global-scoreboard .calendar {overflow:hidden; margin:6px 6px 6px 6px; border: 1px solid #CDCDCC; background-color:#fff; border-radius:3px;}
+	.global-scoreboard .calendar li {float:left; width:33.33333%; text-align:center; padding: 6px 0 2px;line-height: 20px; color:#666; background-color:#f3f3f4;}
+	.global-scoreboard .calendar li a {color:#666;}
+	.global-scoreboard .calendar li.active {background-color:#58585a;}
+	.global-scoreboard .calendar li.active a {color:#f2f2f2;}
+	.global-scoreboard .calendar li:nth-child(2) {border-left:1px solid #cdcdcc;border-right:1px solid #cdcdcc;}
+    .global-scoreboard .calendar li span{display:block; font-size:10px; line-height:10px;}
+		 </style>
+		 
+		 
+		 
+		 <div class="global-scoreboard">
+    
+   
+   
+    <ul class="calendar three">
+    <li><a href="#"><span>WED</span>7</a></li>
+    <li class="active"><a href="#"><span>THU</span>8</a></li>
+    <li><a href="#"><span>FRI</span>9</a></li>
+    </ul>
+    
+    <ul class="scores top-events">
+      
+            <li class="sport-title">
+      	<a href="#">
+      	<p>NCAA Basketball</p>
+      	<span>See All</span>
+      	</a>
+      </li> 
+      <li>
+       <ul class="score-group">
+      <li class="score-chicklet basketball live">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/41.png?w=80&h=80&transparent=true"/><span>Connecticut</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2603.png?w=80&h=80&transparent=true"/><span>Saint Joseph's</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">120</p>
+        <p class="score score-home">111</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">2nd - 11:14</p>
+        <p class="tv">ESPN</p>
+        </div>
+      </li>
+            <li class="score-chicklet basketball live">
+        <div class="game-body">
+        <div class="teams">
+ <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/2168.png?w=80&h=80&transparent=true"/><span>Dayton</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/194.png?w=80&h=80&transparent=true"/><span>Ohio State</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">120</p>
+        <p class="score score-home">111</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">4th - 1:14</p>
+        <p class="tv">ESPN</p>
+        </div>
+      </li>
+            <li class="score-chicklet basketball live">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/183.png?w=80&h=80&transparent=true"/><span>Syracuse</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/130.png?w=80&h=80&transparent=true"/><span>Michigan</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">89</p>
+        <p class="score score-home">98</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">4th - 1:14</p>
+        <p class="tv">ESPN</p>
+        </div>
+      </li>
+      </li>
+      </ul>
+      </li>
+      
+      
+      <li class="sport-title">
+      	<a href="#">
+      	<p>MLB</p>
+      	<span>See All</span>
+      	</a>
+      </li> 
+      <li>
+      <ul class="score-group">
+      <li class="score-chicklet baseball live">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/bal.png?w=50&h=50&transparent=true"/><span>Orioles</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/ari.png?w=50&h=50&transparent=true"/><span>Diamondbacks</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">1</p>
+        <p class="score score-home">3</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">Bot 4th<br/>0 Out</p>
+        <p class="tv">ESPN</p>
+        </div>
+         <figure class="bases"></figure>
+      </li>
+       <li class="score-chicklet baseball">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/nyy.png?w=50&h=50&transparent=true"/><span>Yankees</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/bos.png?w=50&h=50&transparent=true"/><span>Red Sox</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">10</p>
+        <p class="score score-home">9</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">Bot 4th<br/>0 Out</p>
+        <p class="tv">ESPN</p>
+        </div>
+         <figure class="bases"></figure>
+      </li>
+       <li class="score-chicklet baseball final">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away loser"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/bal.png?w=50&h=50&transparent=true"/><span>Orioles</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/ari.png?w=50&h=50&transparent=true"/><span>Diamondbacks</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away loser">1</p>
+        <p class="score score-home">3</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">Final</p>
+        </div>
+      </li>
+       <li class="score-chicklet baseball">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/bal.png?w=50&h=50&transparent=true"/><span>Orioles</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/ari.png?w=50&h=50&transparent=true"/><span>Diamondbacks</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">1</p>
+        <p class="score score-home">3</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">Bot 4th<br/>0 Out</p>
+        <p class="tv">ESPN</p>
+        </div>
+         <figure class="bases"></figure>
+      </li>
+       <li class="score-chicklet baseball">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/bal.png?w=50&h=50&transparent=true"/><span>Orioles</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/ari.png?w=50&h=50&transparent=true"/><span>Diamondbacks</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">1</p>
+        <p class="score score-home">3</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">Bot 4th<br/>0 Out</p>
+        <p class="tv">ESPN</p>
+        </div>
+         <figure class="bases"></figure>
+      </li>
+      </li>
+      </ul>
+      </li>
+      <li class="sport-title">
+      	<a href="#">
+      	<p>NBA</p>
+      	<span>See All</span>
+      	</a>
+      </li> 
+      <li>
+       <ul class="score-group">
+      <li class="score-chicklet basketball">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/nyk.png?w=50&h=50&transparent=true"/><span>Knicks</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/min.png?w=50&h=50&transparent=true"/><span>Timberwolves</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">120</p>
+        <p class="score score-home">111</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">4th - 1:14</p>
+        <p class="tv">ESPN</p>
+        </div>
+      </li>
+            <li class="score-chicklet basketball">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/nyk.png?w=50&h=50&transparent=true"/><span>Knicks</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/min.png?w=50&h=50&transparent=true"/><span>Timberwolves</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">120</p>
+        <p class="score score-home">111</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">4th - 1:14</p>
+        <p class="tv">ESPN</p>
+        </div>
+      </li>
+            <li class="score-chicklet basketball">
+        <div class="game-body">
+        <div class="teams">
+        <p class="team team-away"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/nyk.png?w=50&h=50&transparent=true"/><span>Knicks</span></p>
+        <p class="team team-home"><img src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/min.png?w=50&h=50&transparent=true"/><span>Timberwolves</span></p>
+        </div>
+        <div class="scores">
+        <p class="score score-away">120</p>
+        <p class="score score-home">111</p>
+        </div>
+        </div>
+        <div class="game-meta">
+        <p class="status">4th - 1:14</p>
+        <p class="tv">ESPN</p>
+        </div>
+      </li>
+      </li>
+      </ul>
+      </li>
+    </ul>
+  </div>
+  		
+  		</aside>
+  		
+  		<!-- End Scores Drawer -->
+  		
+  		<a class="exit-off-canvas"></a>
+  </div>
+  </div>
+    
+    <script src="../foundation/js/vendor/jquery.js"></script>
+    <script src="../foundation/js/foundation.min.js"></script>
+    <script src="../foundation/js/foundation/foundation.topbar.js"></script>
+    <script src="../foundation/js/foundation/foundation.offcanvas.dp.js"></script>
+    <script src="js/waypoints/waypoints.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    
+    <script type="text/javascript">
+			
+			function DropDown(el) {
+				this.dd = el;
+				this.placeholder = this.dd.children('span');
+				this.opts = this.dd.find('ul.dropdown > li');
+				this.val = '';
+				this.index = -1;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						return false;
+					});
+
+					obj.opts.on('click',function(){
+						var opt = $(this);
+						obj.val = opt.text();
+						obj.index = opt.index();
+						obj.placeholder.text(obj.val);
+					});
+				},
+				getValue : function() {
+					return this.val;
+				},
+				getIndex : function() {
+					return this.index;
+				}
+			}
+
+			$(function() {
+
+				var dd = new DropDown( $('#dd') );
+
+				$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-3').removeClass('active');
+				});
+
+			});
+	</script>
+  </body>
+</html>

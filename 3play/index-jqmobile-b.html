@@ -1,0 +1,1114 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="i/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+
+    <!-- iPhone 5 -->
+    <link href="i/apple-touch-startup-image-640x1096.png" rel="apple-touch-startup-image">
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="js/slick.css"/>
+    <link rel="stylesheet" href="css/3play.css" />
+
+     <link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?v=201401310325&css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css,fonts/bentonsanscond.css,fonts/bentonsanscondbold.css,fonts/bentonsanscondmedium.css" />
+
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+     <link type="text/css" rel="stylesheet" href="css/jquery.qtip.min.css" />
+
+     <script src="js/jquery-2.1.3.min.js"></script>
+     <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <title>3Play Home</title>
+
+  </head>
+  
+  <!-- add class="b" to body for ab test B variation -->
+  
+  <body class="b">
+
+    <div data-role="page" id="index">
+    
+
+    <div data-role="header" data-tap-toggle="false">
+    
+    <header>
+      <h3>ESPN 3Play</h3>
+    </header>
+
+    </div>
+
+    <div data-role="main">
+
+    <section>
+      <img src="i/shield-3play-large.png" class="logo-home" style="display:block; margin:50px auto 50px; max-width:200px">
+      <a href="#gameplay" class="button-blue" data-transition="slide">Play Now!</a>
+    </section>
+
+     </div>
+
+    </div>
+
+
+    <div data-role="page" id="gameplay">
+
+    <!-- TUTORIAL -->
+
+    <div data-dismissible="false" id="tutorial" data-role="popup" data-transition="pop"> 
+
+    <div data-role="main">
+
+    <section>
+      <h3 style="text-align:center">HOW TO PLAY</h3>
+      <div class="tutorial-carousel" id="tutorial-carousel">
+          <div class="tut-item">
+            <img src="i/tutorial-1.png"/>
+            <h3>GET TODAY'S CARDS</h3>
+            <p>You will will be dealt five cards. Each card will have a prediction of a team or player performance for their game today.</p>
+          </div>
+          <div class="tut-item">
+             <img src="i/tutorial-2-b.png"/>
+            <h3>MAKE YOUR PICKS</h3>
+            <p>To make a pick, you will select if the actual outcome of the prediction will be more or less. Your pick will drop into one of the three slots.</p>
+          </div>
+          <div class="tut-item">
+             <img src="i/tutorial-3.png"/>
+            <h3>CHOOSE WISELY</h3>
+            <p>You can only make three predictions to complete your 3Play, so choose wisely. If you've already made three picks and change your mind, you can swap out a pick.</p>
+          </div>
+          <div class="tut-item">
+            <img src="i/tutorial-4.png"/>
+            <h3>SUBMIT YOUR PICKS</h3>
+            <p>After you have made your three picks, tap "Submit" to complete your entry. You can change your picks anytime until the games start.</p>
+          </div>
+      </div>
+
+      <a href="#" id="close-tutorial" data-rel="back" class="button-blue" style="margin:20px 10px 10px">OK, I Got It!</a>
+
+    </section>
+
+     </div>
+
+    </div>
+    
+
+    <div data-role="header" data-tap-toggle="false">
+
+    <header>
+      <a href="#index" data-transition="slide" data-direction="reverse" class="btn-back-main"><i class="fa fa-lg fa-chevron-left"></a></i>
+      <h3>MLB Players</h3>
+      <a href="#" id="btn-submit">Submit</a>
+    </header>
+
+   </div>
+
+
+   <div data-role="main">
+
+
+    <section class="outer-container">
+
+         <div class="mini-card-container-outer">
+
+         <div class="loading-messages">
+            <img src="i/shield-mlb-small-lines.png">
+            <p class="msg-loading-cards" style="color:#3768bc">MLB Players<br><span>Loading Cards...</span></p>
+            <p class="msg-play">Play Now!</p>
+
+         </div>
+
+
+         <div class="mini-card-container-inner">
+            <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-1">
+                  
+                  <div class="confirm-button" id="confirm-slot-1">
+
+                     <i class="fa fa-lg fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-1" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+             <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-2">
+
+                  <div class="confirm-button" id="confirm-slot-2">
+
+                      <i class="fa fa-lg fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-2" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+            </div>
+
+             <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-3">
+
+                  <div class="confirm-button" id="confirm-slot-3">
+
+                     <i class="fa fa-lg fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-3" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+           
+         </div>
+        </div>
+
+        <div class="full-card-container">
+          
+          <div class="cards-carousel" id="cards-carousel">
+          
+
+       <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-0" style="border-color:#002248">
+           <div class="card-top" style="background-color:#002248">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/29616.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/atl.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Chris Johnson</h4>
+          <h5 class="prop-position">Third Base</h5>
+          <h3 class="prop-category">Hit(s)</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">2</h2>
+            <a href="#" class="btn-or-less" data-prop='["0", "Chris Johnson", "2", "Hits", "Or Less", "#002248"]'></a> <a href="#" class="btn-or-more" data-prop='["0", "Chris Johnson", "2", "Hits", "Or More", "#002248"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>WSH</p></div>
+            <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-0" style="border-color:#002248">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-0">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["0"]' id="remove-0"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+  <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-1" style="border-color:#0a295d">
+           <div class="card-top" style="background-color:#0a295d">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30951.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/wsh.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Bryce Harper</h4>
+          <h5 class="prop-position">Outfielder</h5>
+          <h3 class="prop-category">RBI(s)</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">1</h2>
+            <a href="#" class="btn-or-less" data-prop='["1", "Bryce Harper", "1", "RBI", "Or Less", "#0a295d"]'></a> <a href="#" class="btn-or-more" data-prop='["1", "Bryce Harper", "1", "RBI", "Or More", "#0a295d"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+            <div class="game-cell game-details"><p>1:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>SF</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-1" style="border-color:#002248">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-1">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["1"]' id="remove-1"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+  <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-2" style="border-color:#0a295d">
+           <div class="card-top" style="background-color:#0a295d">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30370.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/wsh.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Doug Fister</h4>
+          <h5 class="prop-position">Starting Pitcher</h5>
+          <h3 class="prop-category">Hits Allowed</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">4</h2>
+            <a href="#" class="btn-or-less" data-prop='["2", "Doug Fister", "4", "Hits Allowed", "Or Less", "#0a295d"]'></a> <a href="#" class="btn-or-more" data-prop='["2", "Doug Fister", "4", "Hits Allowed", "Or More", "#0a295d"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+            <div class="game-cell game-details"><p>1:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>SF</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-2" style="border-color:#0a295d">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-2">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["2"]' id="remove-2"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+  <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-3" style="border-color:#0a295d">
+           <div class="card-top" style="background-color:#0a295d">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/29646.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/wsh.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Ian Desmond</h4>
+          <h5 class="prop-position">Shortstop</h5>
+          <h3 class="prop-category">Hit(s)</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">1</h2>
+            <a href="#" class="btn-or-less" data-prop='["3", "Ian Desmond", "1", "Hit", "Or Less", "#0a295d"]'></a> <a href="#" class="btn-or-more" data-prop='["3", "Ian Desmond", "1", "Hit", "Or More", "#0a295d"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+            <div class="game-cell game-details"><p>1:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>SF</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-3" style="border-color:#0a295d">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-3">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["3"]' id="remove-3"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+    <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-4" style="border-color:#002248">
+           <div class="card-top" style="background-color:#002248">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/6478.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/atl.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Nick Markakis</h4>
+          <h5 class="prop-position">Outfielder</h5>
+          <h3 class="prop-category">RBI(s)</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">1</h2>
+            <a href="#" class="btn-or-less" data-prop='["4", "Nick Markakis", "1", "RBI", "Or Less", "#002248"]'></a> <a href="#" class="btn-or-more" data-prop='["4", "Nick Markakis", "1", "RBI", "Or More", "#002248"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>WSH</p></div>
+            <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-4" style="border-color:#002248">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-4">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["4"]' id="remove-4"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+          </div>
+        </div>
+
+    </section>
+
+     <div id="confirm-modal">
+      <p>Nice Picks Bro! <br><a href="#">Close</a></p>
+     </div>
+
+    </div>
+
+  </div> 
+
+
+   <div data-role="page" id="confirmation">
+    
+    <div data-role="header" data-tap-toggle="false">
+    
+    <header>
+      <a href="#gameplay" data-transition="slide" data-direction="reverse" class="btn-back-main"><i class="fa fa-lg fa-chevron-left"></a></i>
+      <h3>Confirmation</h3>
+    </header>
+
+    </div>
+
+    <div data-role="main">
+
+    <section>
+      <h1 style="text-align:center; margin:50px 0; font-weight:normal; font-family:bentonsansmedium">Great Picks!</h1>
+      <a href="#" class="button-blue" style="margin-bottom:20px">Share Your Picks</a>
+      <a href="#index" class="button-blue button-blue-secondary" data-transition="slide" data-direction="reverse">3Play Home</a>
+    </section>
+
+     </div>
+
+    </div>    
+
+     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+     <script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+     
+
+     <script>
+
+    $( document ).ready(function() {
+
+    // convert links to taps
+
+    /*
+    $("a").on("tap",function(e){
+       $(this).trigger("click");
+       e.preventDefault();
+       return false;
+       });
+    */
+
+    
+    // when closing the tuorial, load the gameplay
+    $('body').on('tap', '#close-tutorial', function(){
+           setTimeout(function(){buildGamePlay();},500);
+      });
+
+    });
+
+    // end document ready
+
+    /* GLOBAL VARIABLES */
+
+    // variable to track filled mini card slots
+
+    var slot1Status = "";
+    var slot2Status = "";
+    var slot3Status = "";
+
+    
+    var currentContainer = "";
+    var currentCardID = "";
+
+    var nextOpenSlot = "";
+    var nextMiniCard = "";
+
+    var slotsFull = "false";
+
+    var currentCard = "";
+
+    var removeId = "";
+    var currentAction = "default";
+    var replacing = "false";
+    var swapping = "false";
+    var slotRemovedFrom = "";
+
+    var SwappedDataID = "";
+
+    // option to skip initial confirmations
+    var skipConfirmation = "true";
+
+      // skip loading animation
+    var skipLoading = "false";
+
+     // show tutorial
+    var showTutorial = "true";
+
+    // current pick variables
+    var propId = "";
+    var playerName = "";
+    var propValue = "";
+    var propCat = "";
+    var propLessMore = "";
+    var propHex = "";
+
+    // tooltip tracking
+    var showedSubmitTT = "false";
+
+
+    var buildTutorial = function(){
+
+        $('#tutorial-carousel').slick({
+            infinite: false,
+            dots: true,
+            arrows: false,
+            centerMode: false,
+            slidesToShow: 1,
+            speed: 200,
+            touchThreshold: 10,
+            responsive: [
+              {
+                breakpoint: 321,
+                settings: {
+                  slidesToShow: 1
+                }
+              }
+            ]
+        });
+    }
+
+
+    var buildGamePlay = function(){
+
+    // build carousel and add click bindings 
+
+     var buildCarousel = function(){
+
+      // Remove Loading Classes on Cards
+        $('#cards-carousel .card-container').css("display", "block");
+
+        $('#cards-carousel').slick({
+            arrows: false,
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            speed: 200,
+            touchThreshold: 5,
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '100px',
+                  slidesToShow: 1
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '25px',
+                  slidesToShow: 1
+                  }
+                },
+              {
+                breakpoint: 415,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '72px',
+                  slidesToShow: 1,
+                 } 
+                },
+                {
+                breakpoint: 376,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '52px',
+                  slidesToShow: 1,
+                  }
+                },
+                {
+                breakpoint: 321,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '25px',
+                  slidesToShow: 1,
+                }
+              }
+            ]
+        });
+
+
+      /* CLICK EVENTS */
+
+     $('body').on('tap', '.prop-btn-group a', function(){     
+
+       var propData = $(this).data("prop");
+       popPick(propData);
+      
+      });
+
+
+      $('body').on('tap', '.cancel-pick', function(){ 
+
+           cancelPick();
+
+      });
+
+
+      $('body').on('tap', '.remove-pick', function(){ 
+
+           var removeData = $(this).data("remove");
+           removePick(removeData);
+
+      });
+
+
+
+      $('body').on('tap', '.confirm-button', function(){ 
+
+           var propSlot = $(this).attr('id');
+           confirmPick(propSlot);
+
+      });
+
+
+      $('body').on('tap', '.mini-card', function(){ 
+
+           var slideTo = $(this).attr('data-id');
+           $('#cards-carousel').slick('slickGoTo',slideTo);
+
+      });
+
+      $('body').on('tap', 'header #btn-submit', function(){
+           //$('#confirm-modal').show();
+           $.mobile.changePage( "#confirmation", { transition: "slide", changeHash: true });
+      });
+
+      $('body').on('tap', '#confirm-modal a', function(){
+           $('#confirm-modal').hide();
+      });
+
+      $('body').on('tap', '.fa-bar-chart', function(){
+           $(this).parents('.card-container').toggleClass('flip');
+      });
+
+      $('body').on('tap', '.flip-close', function(){
+           $(this).parents('.card-container').toggleClass('flip');
+      });
+
+
+      // on swipe of carousel call Cancel function to cancel any active pick
+      
+        $('#cards-carousel').on('swipe', function(event, slick, direction){
+            if (currentAction == "picking") {
+            cancelPick();
+             }
+        });
+
+     }
+
+
+     var animateSlots =function() {
+      
+      $('.loading-messages').removeClass('animated zoomIn');
+      $('.loading-messages').addClass('animated zoomOut');
+      $('.loading-messages').css('display', 'none');
+
+      $('.mini-card-slot').each(function(i) {
+        
+        //console.log($(this));
+        var miniSlotAnimating = $(this);
+        // console.log(miniSlotAnimating);
+        
+        setTimeout(function () { miniSlotAnimating,
+           
+           $(miniSlotAnimating).css('display', 'block');
+           $(miniSlotAnimating).addClass('animated zoomIn');
+
+           }, i*100);
+
+        setTimeout(function(){$('.mini-card-slot').removeClass('animated zoomIn');},400);  
+      });
+
+      }
+
+
+     var entranceAnimation = function(){
+
+     
+     $('.loading-messages').css('display', 'block');
+     $('.loading-messages').addClass('animated zoomIn');
+
+
+     $('#cards-carousel').css("opacity","1");
+
+     // disable swiping of carousel during entrance animation
+     $('#cards-carousel').slick("slickSetOption", "swipe", false, false);
+
+
+     // hard code the count for now
+     var cardCount = $('#cards-carousel .card-container').not( ".slick-cloned,.slick-active" ).length-1;
+
+     setTimeout(function(){
+
+     $('#cards-carousel .card-container').not( ".slick-cloned,.slick-active").each(function(i) {
+        setTimeout(function(){
+        var currentSlide = $('#cards-carousel').slick('slickCurrentSlide');
+        var prevSlide = currentSlide;
+        var nextSlide = currentSlide + 3;
+        $('#cards-carousel .card-container').filter('[data-slick-index="'+prevSlide+'"]').addClass('beenintroduced');    
+        $('#cards-carousel').slick('slickNext'); 
+        if (i==(cardCount - 1)) {
+          console.log(nextSlide);
+          $('#cards-carousel .card-container').filter('[data-slick-index="'+nextSlide+'"]').addClass('beenintroduced');
+        }
+        if (i==(cardCount)) {
+          $('#cards-carousel .card-container').addClass('beenintroduced');
+          $('.card .prop-btn-group a').css('pointer-events','auto');
+          $('#cards-carousel').slick("slickSetOption", "swipe", true, false);
+          $('#cards-carousel').slick("slickSetOption", "speed", "600", false);
+          setTimeout(function(){animateSlots()},1000);
+          setTimeout(function(){$('.card .prop-btn-group a').css({'background-color':'#3f79cd','color':'#fff','border-color':'#3f79cd'});},1800);
+          // for AB test
+          setTimeout(function(){$('.b .card .prop-btn-group').addClass("enabled");},1800);
+        }
+           // adjust speed of card entrances
+           }, i*800);  
+      });
+      }, 1000);
+
+     }
+
+  
+  // for debugging, skip the loading animation
+
+  if (skipLoading == "false") {
+
+     buildCarousel();
+     
+     setTimeout(function(){entranceAnimation()},1000);
+
+   } else {
+
+    buildCarousel();
+    $('#cards-carousel').css("opacity","1");
+    $('#cards-carousel').slick("slickSetOption", "draggable", true, false);
+    $('#cards-carousel .card-container').addClass('beenintroduced');
+    $('.mini-card-slot').css('display', 'block');
+    $('.card .prop-btn-group a').css('pointer-events','auto');
+
+   }
+
+
+     /* FUNCTIONS */
+
+    var popPick = function(propData){
+
+      
+      currentAction="picking";
+
+      // Extrapolate Values in Array
+
+      propId = propData[0];
+      playerName = propData[1];
+      propValue = propData[2];
+      propCat = propData[3];
+      propLessMore = propData[4];
+      propHex = propData[5];
+      // console.log(propLessMore);
+
+      
+      // Update Buttons
+
+     // Get Buttons in Current Card
+
+     currentCard = "#card-"+propId;
+
+     
+     // Change Buttons based on less or more
+
+     if (propLessMore == "Or Less") {
+
+     $(currentCard + ' .btn-or-more').removeClass('selected');
+     $(currentCard + ' .btn-or-more').addClass('unselected');
+     $(currentCard + ' .btn-or-less').removeClass('unselected');
+     $(currentCard + ' .btn-or-less').addClass('selected');
+
+     }  else {
+
+     $(currentCard + ' .btn-or-less').removeClass('selected');
+     $(currentCard + ' .btn-or-less').addClass('unselected');
+     $(currentCard + ' .btn-or-more').removeClass('unselected');
+     $(currentCard + ' .btn-or-more').addClass('selected');
+
+
+     }
+
+    // check if the card is already selected. If true, set the card to swap out
+    
+    if (propId == slot1Status) {
+        replacing = "true";
+        nextMiniCard = "#mini-card-1";
+      } else if (propId == slot2Status){
+        replacing = "true";
+        nextMiniCard = "#mini-card-2";
+    } else if (propId == slot3Status){
+        replacing = "true";
+        nextMiniCard = "#mini-card-3"; 
+    } else { 
+       replacing = "false";
+    }
+
+    // console.log(nextMiniCard);
+
+
+    if (replacing == "false") {
+    
+    // Identify Confirm Buttons to Be shown. Check Global Variable. If they're all filled exit the function and enter the swap/replace function
+
+    if (slot1Status == "") { nextOpenSlot = "#confirm-slot-1";}
+    if ((slot1Status != "") && (slot2Status == "")) { nextOpenSlot = "#confirm-slot-2";}
+    if ((slot1Status != "") && (slot2Status != "")) { nextOpenSlot = "#confirm-slot-3"; }
+    if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { swapping = "true"; }
+
+
+    // Identify Mini Cards to Build. Check Global Variable.  If they're all filled exit the function to the swap function
+
+    if (slot1Status == "") { nextMiniCard = "#mini-card-1"; }
+    if ((slot1Status != "") && (slot2Status == "")) { nextMiniCard = "#mini-card-2"; }
+    if ((slot1Status != "") && (slot2Status != "")) { nextMiniCard = "#mini-card-3"; }
+    if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { swap(propId); return false; }
+
+    }
+
+
+    // if we choose to skip the confirmations on initial picks then just confirm the pick. based on skipConfirmation variable
+
+    if ((skipConfirmation != "true" || slotsFull == "true") && replacing == "false") {
+      showConfirm(propId,"false");
+      } else {
+        confirmPick();
+      }
+    }
+
+
+    var showConfirm = function(propId){     
+
+
+     if (slotsFull == "false") {
+     $('#cancel-'+propId).css('display', 'block');
+     $(nextOpenSlot).css('display', 'block');
+     $(nextOpenSlot).removeClass('animated flipOutX');
+     $(nextOpenSlot).addClass('animated flipInX'); 
+
+      } else {
+     $('#cancel-'+propId).css('display', 'block');
+     $(".confirm-button").css('display', 'block');
+     $(".confirm-button").removeClass('animated flipOutX');
+     $(".confirm-button").addClass('animated flipInX'); 
+
+      }
+  
+    }
+
+
+    // function to handle swapping or replacing a card. Might be just be a delegate function
+
+
+    var swap = function(propId){
+
+      showConfirm(propId,"true");
+    //  console.log("swapReplace");
+
+    }
+
+
+    var confirmPick = function(propSlot){     
+
+    currentAction="default";
+
+    if (swapping == "true") {
+     nextMiniCard = $('#'+propSlot).siblings('.mini-card').attr("id");
+     nextMiniCard = "#"+nextMiniCard;
+
+      // Remove Previous Mini Card
+     SwappedDataID = $(nextMiniCard).attr("data-id");
+     removePick("",SwappedDataID);
+    
+    }
+     
+    // Build Mini Card
+
+    $(nextMiniCard + ' p.prop-name').html(playerName);
+    $(nextMiniCard + ' p.prop-value').html(propValue);
+    $(nextMiniCard + ' p.prop-category').html(propCat);
+    $(nextMiniCard + ' p.more-less').html(propLessMore);
+    $(nextMiniCard).css('background-color', propHex);
+    $(nextMiniCard).attr("data-id",propId);
+
+
+     // current slot id
+
+    currentContainer = $(nextMiniCard).parent().attr("id");
+    currentCardID = $(nextMiniCard).attr("data-id");
+
+
+    // show a little animation that indicates the card is changing
+    if (replacing == "true") {
+      
+      $('.confirm-button').css('display', 'none');
+      $(nextMiniCard).removeClass('animated bounceInDown');
+      $(nextMiniCard).removeClass('animated flipInY');
+      $(nextMiniCard).addClass('animated flipInY');
+      setTimeout(function(){$(nextMiniCard).removeClass('animated flipInY');},1000);
+    
+    } else {
+
+     $('.confirm-button').css('display', 'none');
+     $(nextMiniCard).css('display', 'block');
+     $(nextMiniCard).removeClass('animated bounceOutUp');
+     $(nextMiniCard).addClass('animated bounceInDown');
+
+    }
+     
+
+     $('.cancel-pick').css('display', 'none');
+     
+     // Show only current remove button
+
+     $('#remove-'+currentCardID).css('display', 'block');
+
+
+     // Update global slots variables so we know which one has picks
+
+     if (currentContainer == "slot-1") { 
+        slot1Status = currentCardID;
+      } else if (currentContainer == "slot-2") { 
+        slot2Status = currentCardID; 
+      } else if (currentContainer == "slot-3") { 
+        slot3Status = currentCardID;
+     }
+
+     checkifComplete();
+
+    }
+
+
+    var checkifComplete = function(){
+
+       if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { 
+          $('#btn-submit').css("color","#fff200");
+          $('#btn-submit').css("pointer-events", "auto");
+          slotsFull=true;
+
+          // if ready to submit and haven't shown tooltip yet, show it
+          if (showedSubmitTT == "false") {
+           setTimeout(function(){$('header #btn-submit').qtip('toggle', true);},2000);
+           // console.log(showedSubmitTT);
+            showedSubmitTT = "true";
+          }
+
+       } else {
+          $('#btn-submit').css("color","#ccc");
+          $('#btn-submit').css("pointer-events", "none");
+          slotsFull=false;
+      }
+
+       // RESET STATES
+       replacing="false";
+       swapping="false";
+
+    } 
+
+    var cancelPick = function(){     
+     $(currentCard + ' .btn-or-more').removeClass('selected unselected');
+     $(currentCard + ' .btn-or-less').removeClass('selected unselected');
+     $('.cancel-pick').css('display', 'none');
+     $('.confirm-button').removeClass('flipInX');
+     $('.confirm-button').addClass('flipOutX');
+
+     // RESET STATES
+      replacing="false";
+      swapping="false";
+    }
+
+     
+     var removePick = function(removeData, cardGettingSwapped){     
+     
+     
+     // IF SWAPPING THE CARD SET THE CARD TO BE REMOVED TO THE PREVIOUS OCCUPIED CARD
+
+     if (swapping == "true") {
+      removeId = cardGettingSwapped;      
+     } else {
+      removeId = removeData[0];
+     }
+     
+
+    slotRemovedFrom = $('.mini-card[data-id=' + removeId + ']').parent().attr("id");
+
+    // Update global slots variables so we know which one has picks
+
+     if (slotRemovedFrom == "slot-1") { 
+        slot1Status = "";
+      } else if (slotRemovedFrom == "slot-2") { 
+        slot2Status = ""; 
+      } else if (slotRemovedFrom == "slot-3") { 
+        slot3Status = "";
+     }
+
+
+     $('#card-' +removeId + ' .btn-or-less').removeClass('selected unselected');
+     $('#card-' +removeId + ' .btn-or-more').removeClass('selected unselected');
+     var removeLink = '#remove-' +removeId;
+     $(removeLink).css('display', 'none');
+
+     $('.mini-card[data-id=' + removeId + ']').removeClass('animated bounceInDown');
+     $('.mini-card[data-id=' + removeId + ']').addClass('animated bounceOutUp');
+    
+     checkifComplete();
+
+    }
+
+  }
+
+    // end gameplay
+
+
+  $(document).on("pageshow","#gameplay",function(){ // When entering Gameplay
+
+    // show tutorial
+    if (showTutorial == "true") {
+      buildTutorial();
+      setTimeout(function(){$('#tutorial').popup().popup('open');},500);
+      showTutorial = "false";
+    }
+
+
+    // call the function to build all the gameplay
+    //buildGamePlay();
+
+   // CREATE THE HELPER TOOLTIPS
+   
+   $('header #btn-submit').qtip({ // Grab some elements to apply the tooltip to
+    show: {
+        event: 'false',
+        modal: true,
+    },
+    content: {
+        text: 'Tap to Submit, or Change Your Picks'
+    },
+    style: {
+        classes: 'qtip-dark'
+    },
+     position: {
+        my: 'center right',  // Position my top left...
+        at: 'center left', // at the bottom right of...
+        target: $('header #btn-submit'), // my target
+         adjust: {
+            x: -10
+        }
+    },
+    hide: {
+        event: false,
+        inactive: 3000
+    }
+    })
+
+   var toolTipAPI = $('header #btn-submit').qtip('api');
+
+
+   });
+
+     </script>
+     
+  </body>
+</html>

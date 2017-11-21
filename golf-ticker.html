@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=no" />
+    <title>ESPN - 2 - Slideout Scores Prototype</title>
+    <link rel="stylesheet" href="../foundation/css/foundation-dp.css" />
+    <link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?v=201401310325&css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css,fonts/bentonsanscond.css,fonts/bentonsanscondbold.css,fonts/bentonsanscondmedium.css" />
+     <link rel="stylesheet" type="text/css" href="css/dropdowns/style.css" />
+    <script src="../foundation/js/vendor/modernizr.js"></script>
+    <script src="js/fastclick.js"></script>
+  </head>
+  <body>
+  
+  <div class="fake-body" style="width:1024px; height:830px; background: transparent url(assets/1024-bg.png) 0 0 no-repeat; position:relative">
+  
+  <div class="carousel-holder" style="background-color:#fff; position:absolute; top: 120px;right: 216px;">
+  <div class="carousel">
+       <ul>
+           <li><img src="assets/golfer-woods.png" alt="1"></li>
+           <li><img src="assets/golfer-mickelson.png" alt="2"></li>
+           <li><img src="assets/golfer-hamilton.png" alt="3"></li>
+       </ul>
+   </div>
+   
+   </div>
+ 
+  </div>
+    
+
+    
+    <script src="../foundation/js/vendor/jquery.js"></script>
+    <script src="../foundation/js/foundation.min.js"></script>
+    <script src="../foundation/js/foundation/foundation.topbar.js"></script>
+    <script src="../foundation/js/foundation/foundation.offcanvas.dp.js"></script>
+    <script src="js/waypoints/waypoints.min.js"></script>
+    <script src="assets/jcarousel.js"></script>
+    <script>
+      $(document).foundation();
+      
+      $(".carousel").jCarouselLite({
+      visible: 1
+      });
+    </script>
+    
+  </body>
+</html>

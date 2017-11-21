@@ -1,0 +1,463 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="i/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+
+    <!-- iPhone 5 -->
+    <link href="i/apple-touch-startup-image-640x1096.png" rel="apple-touch-startup-image">
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="js/slick.css"/>
+    <link rel="stylesheet" href="css/3play-v2.css" />
+
+     <link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?v=201401310325&css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css,fonts/bentonsanscond.css,fonts/bentonsanscondbold.css,fonts/bentonsanscondmedium.css" />
+
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+     <link type="text/css" rel="stylesheet" href="css/jquery.qtip.min.css" />
+
+     <script src="js/jquery-2.1.3.min.js"></script>
+     <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <title>Disney ID</title>
+
+  </head>
+  
+  <!-- add class="b" to body for ab test B variation -->
+  
+  <body class="b">
+
+    <div data-role="page" id="index">
+    
+
+    <div data-role="main">
+
+    <section>
+      <img src="i/shield-3play-large.png" class="logo-home" style="display:block; margin:50px auto 50px; max-width:200px">
+      <a href="#signin" class="button-blue" data-rel="popup" data-transition="slideup">Sign In</a>
+    
+
+    <!-- sign in -->
+
+
+    </section>
+
+     </div>
+
+     <div data-role="popup" id="signin">
+
+    <div data-role="main">
+
+    <section>
+      <a href="#index" class="button-blue" data-rel="back">Close</a>
+    </section>
+
+     </div>
+
+    </div>
+
+    </div>
+
+
+
+
+    <div data-role="page" id="gameplay">
+
+    
+    <!-- tutorial tooltips -->
+    <div id="tutorial-overlay">
+
+      <img class="overlay-instruction" id="oi-submit" src="i/tutorial-overlay-submit.png"/>  
+      <img class="overlay-instruction" id="oi-stats" src="i/tutorial-overlay-stats.png"/>  
+      <img class="overlay-instruction" id="oi-swipe" src="i/tutorial-overlay-swipe.png"/> 
+      <img class="overlay-instruction" id="oi-close" src="i/tutorial-overlay-close.png"/>      
+
+    </div>
+    
+
+
+    <div data-role="header" data-tap-toggle="false">
+
+    <header>
+      <a href="#index" data-transition="slide" data-direction="reverse" class="btn-back-main"><i class="fa fa-lg fa-chevron-left"></a></i>
+      <h3>MLB Players</h3>
+      <a href="#" id="btn-submit">Submit</a>
+    </header>
+
+   </div>
+
+
+   <div data-role="main">
+
+
+    <section class="outer-container">
+
+         <div class="mini-card-container-outer">
+
+         <div class="loading-messages">
+            <img src="i/shield-mlb-small-lines.png">
+            <p class="msg-loading-cards" style="color:#3768bc">MLB Players<br><span>Loading Cards...</span></p>
+            <p class="msg-play">Play Now!</p>
+
+         </div>
+
+
+         <div class="mini-card-container-inner">
+            <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-1">
+                  
+                  <div class="confirm-button" id="confirm-slot-1">
+
+                     <i class="fa fa-lg fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-1" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+             <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-2">
+
+                  <div class="confirm-button" id="confirm-slot-2">
+
+                      <i class="fa fa-lg fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-2" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+            </div>
+
+             <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-3">
+
+                  <div class="confirm-button" id="confirm-slot-3">
+
+                     <i class="fa fa-lg fa-refresh"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-3" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+           
+         </div>
+        </div>
+
+        <div class="full-card-container">
+          
+          <div class="cards-carousel" id="cards-carousel">
+          
+
+       <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-0" style="border-color:#002248">
+           <div class="card-top" style="background-color:#002248">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/29616.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/atl.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Chris Johnson</h4>
+          <h5 class="prop-position">Third Base</h5>
+          <h3 class="prop-category">Hit(s)</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">2</h2>
+            <a href="#" class="btn-or-less" data-prop='["0", "Chris Johnson", "2", "Hits", "Or Less", "#002248"]'></a> <a href="#" class="btn-or-more" data-prop='["0", "Chris Johnson", "2", "Hits", "Or More", "#002248"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>WSH</p></div>
+            <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-0" style="border-color:#002248">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-0">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["0"]' id="remove-0"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+  <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-1" style="border-color:#0a295d">
+           <div class="card-top" style="background-color:#0a295d">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30951.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/wsh.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Bryce Harper</h4>
+          <h5 class="prop-position">Outfielder</h5>
+          <h3 class="prop-category">RBI(s)</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">1</h2>
+            <a href="#" class="btn-or-less" data-prop='["1", "Bryce Harper", "1", "RBI", "Or Less", "#0a295d"]'></a> <a href="#" class="btn-or-more" data-prop='["1", "Bryce Harper", "1", "RBI", "Or More", "#0a295d"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+            <div class="game-cell game-details"><p>1:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>SF</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-1" style="border-color:#002248">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-1">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["1"]' id="remove-1"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+  <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-2" style="border-color:#0a295d">
+           <div class="card-top" style="background-color:#0a295d">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/30370.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/wsh.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Doug Fister</h4>
+          <h5 class="prop-position">Starting Pitcher</h5>
+          <h3 class="prop-category">Hits Allowed</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">4</h2>
+            <a href="#" class="btn-or-less" data-prop='["2", "Doug Fister", "4", "Hits Allowed", "Or Less", "#0a295d"]'></a> <a href="#" class="btn-or-more" data-prop='["2", "Doug Fister", "4", "Hits Allowed", "Or More", "#0a295d"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+            <div class="game-cell game-details"><p>1:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>SF</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-2" style="border-color:#0a295d">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-2">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["2"]' id="remove-2"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+  <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-3" style="border-color:#0a295d">
+           <div class="card-top" style="background-color:#0a295d">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/29646.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/wsh.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Ian Desmond</h4>
+          <h5 class="prop-position">Shortstop</h5>
+          <h3 class="prop-category">Hit(s)</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">1</h2>
+            <a href="#" class="btn-or-less" data-prop='["3", "Ian Desmond", "1", "Hit", "Or Less", "#0a295d"]'></a> <a href="#" class="btn-or-more" data-prop='["3", "Ian Desmond", "1", "Hit", "Or More", "#0a295d"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+            <div class="game-cell game-details"><p>1:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>SF</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-3" style="border-color:#0a295d">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-3">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["3"]' id="remove-3"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+    <div class="card-container">
+           
+        <div class="flipper">
+          <div class="front">
+           <div class="card" id="card-4" style="border-color:#002248">
+           <div class="card-top" style="background-color:#002248">
+            <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/mlb/players/full/6478.png&w=350&h=254" />
+            <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500-dark/scoreboard/atl.png?transparent=true" />
+            <i class="fa fa-bar-chart fa-lg"></i>
+<img class="share-icon" src="i/ios-share-icon.png" />
+          </div>
+          <div class="card-bottom">
+          <h4 class="prop-name">Nick Markakis</h4>
+          <h5 class="prop-position">Outfielder</h5>
+          <h3 class="prop-category">RBI(s)</h3>
+          <div class="prop-btn-group">
+            <h2 class="prop-value">1</h2>
+            <a href="#" class="btn-or-less" data-prop='["4", "Nick Markakis", "1", "RBI", "Or Less", "#002248"]'></a> <a href="#" class="btn-or-more" data-prop='["4", "Nick Markakis", "1", "RBI", "Or More", "#002248"]'></a>
+          </div>
+
+          <div class="game-info-outer">
+          <div class="game-info">
+            <div class="game-cell team-cell team-away"> <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/wsh.png?w=80&h=80&transparent=true" /><p>WSH</p></div>
+            <div class="game-cell game-details"><p>8:00 PM</p><p class="network">ESPN</p></div>
+            <div class="game-cell team-cell team-home"><img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/atl.png?w=80&h=80&transparent=true" /><p>ATL</p></div>
+          </div>
+          </div>
+
+        </div>
+        </div>
+      </div>
+          <div class="back">
+          <div class="card" id="card-4" style="border-color:#002248">
+           <h1 style="text-align:center">Season Stats</h1>
+           <p class="flip-close" style="text-align:center">Close</p>
+          </div>
+          </div>
+     </div>
+
+        <a class="cancel-remove-pick cancel-pick" id="cancel-4">Cancel Pick</a>
+        <a class="cancel-remove-pick remove-pick" data-remove='["4"]' id="remove-4"><i class="fa fa-times"></i> Remove Pick</a>
+
+  </div>
+
+          </div>
+        </div>
+
+    </section>
+
+     <div id="confirm-modal">
+      <p>Nice Picks Bro! <br><a href="#">Close</a></p>
+     </div>
+
+    </div>
+
+  </div> 
+
+
+   <div data-role="page" id="confirmation">
+    
+    <div data-role="header" data-tap-toggle="false">
+    
+    <header>
+      <a href="#gameplay" data-transition="slide" data-direction="reverse" class="btn-back-main"><i class="fa fa-lg fa-chevron-left"></a></i>
+      <h3>Confirmation</h3>
+    </header>
+
+    </div>
+
+    <div data-role="main">
+
+    <section>
+      <h1 style="text-align:center; margin:50px 0; font-weight:normal; font-family:bentonsansmedium">Great Picks!</h1>
+      <a href="#" class="button-blue" style="margin-bottom:20px">Share Your Picks</a>
+      <a href="#index" class="button-blue button-blue-secondary" data-transition="slide" data-direction="reverse">3Play Home</a>
+    </section>
+
+     </div>
+
+    </div>    
+
+     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+     <script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+     
+
+     <script>
+
+    $( document ).ready(function() {
+
+
+  });
+
+  </script>
+     
+  </body>
+</html>

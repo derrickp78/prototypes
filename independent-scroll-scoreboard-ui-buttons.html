@@ -1,0 +1,224 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="../foundation/css/foundation.css" />
+    <script src="../foundation/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    
+    <!-- Navigation -->
+ 
+  <div class="fixed">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a href="#">
+           ESPN
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+  </nav>
+  </div>
+
+<div class="row" id="ad-unit" style="background-color:#ccc; margin-top:65px; margin-bottom:20px">
+	<div class="ad" style="width:728px; height:90px; background-color:yellow; margin: 10px auto; text-align:center">Ad Unit</div>
+</div>
+  
+  <!-- Main Score -->
+  
+  <style>
+  
+  </style>
+ 
+    <!-- End Content Slider -->
+
+          <div class="row" id="feed-row">
+            <!-- Shows -->
+           
+            <div class="small-12 medium-7 large-8 columns" id="scores">
+ 
+              <div class="panel" style="height:200px">
+                <h5><a href="#">Score</a></h5>
+              </div>
+              
+              <div class="panel" style="height:200px">
+                <h5><a href="#">Score</a></h5>
+              </div>
+              
+              <div class="panel" style="height:200px">
+                <h5><a href="#">Score</a></h5>
+              </div>
+              
+              <div class="panel" style="height:200px">
+                <h5><a href="#">Score</a></h5>
+              </div>
+                  <div class="panel" style="height:200px">
+                <h5><a href="#">Score</a></h5>
+              </div>
+              
+              <div class="panel" style="height:200px">
+                <h5><a href="#">Score</a></h5>
+              </div>
+              
+              <div class="panel" style="height:200px">
+                <h5><a href="#">Score</a></h5>
+              </div>
+              
+              <div class="panel" style="height:200px">
+                <h5><a href="#">Score</a></h5>
+              </div>
+              
+            </div>
+            <!-- End Shows -->
+ 
+ 
+ 
+            <!-- Feed -->
+ 
+           <style>
+           .now {overflow:hidden; height:400px;  transition: height .2s;}
+           </style>
+           
+            <div class="small-12 medium-5 large-4 columns now">
+ 
+             <h5>NOW</h5>
+             
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+              <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+               <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+ 
+ 			 <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+               <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+ 
+ 			  <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+             <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+               <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+ 
+ 			 <div id="hidden-tweets" style="display:none">
+ 			 
+ 			 <p>Hidden Tweets</p>
+ 			 <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+              
+               <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+ 
+ 			  <div class="panel" style="height:400px">
+                <h5><a href="#">Tweet</a></h5>
+              </div>
+ 			</div>
+ 
+ 
+ 
+            </div>
+ 
+            <!-- End Feed -->
+ 
+          </div>
+
+ 
+    <!-- End Content -->
+ 
+    </div>
+  </div>
+    
+    <script src="../foundation/js/vendor/jquery.js"></script>
+    <script src="../foundation/js/foundation.min.js"></script>
+    <script src="js/jquery.sticky-kit.min.js"></script>
+    <script src="js/waypoints/waypoints.min.js"></script>
+     
+     <script>
+     $(document).foundation();
+     
+     var windowHeight = $( window ).height();
+     
+     var adUnit = $( "#ad-unit" );
+     var adUnitHeight = adUnit.outerHeight(true);
+    
+     
+     var nowColumn =  $( ".now" );
+     // var nowHeight = Math.round((windowHeight - adUnitHeight) + adUnitHeight - 45);
+     var nowHeight = Math.round(windowHeight - adUnitHeight);
+     var nowFixedHeight = Math.round(windowHeight);
+     
+     var nowOffset = nowColumn.offset().left;
+     var nowWidth = nowColumn.outerWidth();
+     
+     console.log (nowHeight);
+      
+      
+    $(".now").css( "height", nowHeight);
+     
+     
+     $('.now').waypoint(function(direction) {
+  		if (direction == 'down') {
+  		$('.now').css({"position": "fixed","top": "45px", "left": nowOffset, "width":nowWidth, "height":nowFixedHeight});
+  		}
+  		console.log(direction);
+	}, { offset: 45 });
+	
+	 
+	 $('#scores').waypoint(function(direction) {
+  		if (direction == 'up') {
+  		//console.log("poop");
+  		$('.now').css({"position": "static"});
+  		}
+	}, { offset: 45 });
+	
+     </script>
+     
+  </body>
+</html>

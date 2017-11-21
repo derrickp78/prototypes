@@ -1,0 +1,696 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="i/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+
+    <!-- iPhone 5 -->
+    <link href="i/apple-touch-startup-image-640x1096.png" rel="apple-touch-startup-image">
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>
+
+     <link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?v=201401310325&css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css,fonts/bentonsanscond.css,fonts/bentonsanscondbold.css,fonts/bentonsanscondmedium.css" />
+
+     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <title>3Play Gameplay</title>
+
+  </head>
+  <body>
+    
+    <style>
+
+    @font-face {
+  font-family: 'ESPNIcons';
+  src: url('css/fonts/ESPNIconsBETATwelve.eot'); /* IE9 Compat Modes */
+  src: url('css/fonts/ESPNIconsBETATwelve.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('css/fonts/ESPNIconsBETATwelve.woff') format('woff'), /* Modern Browsers */
+       url('css/fonts/ESPNIconsBETATwelve.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('css/fonts/ESPNIconsBETATwelve.svg') format('svg'); /* Legacy iOS */
+  }
+
+
+    body {background-color:#f1f2f3; font-family:BentonSans; font-size:14px;}
+    
+    header {background-color:#666;height:65px;border-bottom:2px solid #fff200; position:relative; overflow:hidden;}
+    header h3{text-align:center; color:#fff; font-size:1.2em; line-height:42px; margin:23px 0 0 0; font-weight:normal;}
+    header #btn-submit{position:absolute; right:10px; top:23px; line-height:42px; color:#ccc; font-size:1.2em; text-decoration:none;}
+    
+    .outer-container {overflow:hidden;}
+
+    .mini-card-container-outer {margin:16px 0 8px 8px;}
+    .mini-card-container-inner {display:table; width:100%; table-layout: fixed;}
+    .mini-card-cell {display:table-cell; vertical-align:top;}
+    .mini-card-slot-container {margin-right:8px;}
+    .mini-card-slot {background-color:#d7d8d9; height:96px; border-radius:3px; -webkit-box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.2);
+-moz-box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.2); box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.2);  background-repeat: no-repeat; background-position:50% 50%; background-size:cover; padding:3px; box-sizing:border-box; overflow:hidden; position:relative;}
+
+    .mini-card-slot#slot-1 {background-image:url(i/slot-1.png);}
+    .mini-card-slot#slot-2 {background-image:url(i/slot-2.png);}
+    .mini-card-slot#slot-3 {background-image:url(i/slot-3.png);}
+
+    .confirm-button {border-radius:3px; background-color:#fff; display:block; overflow:hidden; position:absolute; z-index:3; top:3px; left:3px; bottom:3px; right:3px; display:none;}
+    .confirm-button i {display:block; margin:0 auto; line-height:90px; text-align:center; color:#4d4d4f;}
+
+    .mini-card {height:90px; border-radius:3px; background-color:#fff; display:none; overflow:hidden; position:relative; z-index:2;}
+    .mini-card .prop-name {font-size:10px; text-align:center; line-height:19px; margin:0; background-color:#fff;}
+    .mini-card .prop-details p {color:#fff; text-align:center;}
+    .mini-card .prop-details p.prop-value {font-size:22px; margin:6px 0 0;}
+    .mini-card .prop-details p.prop-category {font-size:12px; margin:0;}
+    .mini-card .prop-details p.more-less {font-size:12px; margin:0;}
+
+    .full-card-container {padding:8px 0 0 0; overflow:hidden;}
+
+    .card {border-radius:6px; background-color:#fff; overflow:hidden; height:325px; position:relative; -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.44); box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.44); margin:0 8px 6px 8px; color:#333; border:2px solid #af1e2c;}
+    .card-top {height:115px; background-color:#af1e2c; position:relative;}
+    .card-top:before {content:""; background-color:#fff; width:600px; height:100px; position:absolute; top:115px; left:-10px; -webkit-transform:rotate(4deg); z-index:5;}
+    .card-top .headshot {display:block; width:180px; margin: 0 auto; position:relative; z-index:4;}
+    .card-top .team-logo {position:absolute; top: -25px; left:-20px; opacity:.2; z-index:3; width:150px;}
+
+    .card-bottom {position:relative; z-index:6; top:0px;}
+    .card .prop-name {text-align:center; font-family:Bentonsans; font-weight:normal; font-size:16px; margin:0;}
+    .card .prop-position {text-align:center; font-family:Bentonsans; font-weight:normal; font-size:11px; margin:0; color:#a9a9a9;}
+    .card .prop-value {text-align:center; font-family:Bentonsans; font-weight:normal; font-size:28px; margin:10px 0 0 0;}
+    .card .prop-category {text-align:center; font-family:Bentonsans; font-weight:normal; font-size:13px; margin:0 0 15px 0;}
+
+    .card .prop-btn-group {overflow:hidden;}
+    .card .prop-btn-group a {display:block; line-height:34px; background-color: #f1f2f3; color: #666666; overflow:hidden; text-align:center; font-family:Bentonsans; -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.44); -moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.44); margin-bottom:4px; border:1px solid #ccc; -webkit-animation: colorPulse 1s infinite; text-decoration:none;}
+
+    .card .prop-btn-group a.selected {background-color:#4d4d4f; color:#fff; border-color:#4d4d4f; -webkit-animation: none}
+    .card .prop-btn-group a.unselected {background-color:#f1f2f3; color:#b2b2b2; -webkit-animation: none;}
+
+    .card .prop-btn-group .btn-or-less {float:left; width:42%; margin-left:14px; border-top-left-radius:3px;border-bottom-left-radius:3px;}
+    .card .prop-btn-group .btn-or-more {float:right; width:42%; margin-right:14px; border-top-right-radius:3px;border-bottom-right-radius:3px;}
+
+    .card .game-info {text-align:center; color:#666; font-size:11px; padding: 20px 0 0}
+
+    .card-container .cancel-remove-pick {display:none; text-align:center; color: #999; margin:0px 0 0; line-height:35px;}
+
+
+
+    /* ANIMATIONS */
+    @-webkit-keyframes colorPulse { 0% {background-color: #f1f2f3;} 50% {background-color: #eee;} 100% {background-color: #f1f2f3;} }
+
+
+    </style>
+
+    <header>
+      <h3>NFL Players</h3>
+      <a href="#" id="btn-submit">Submit</a>
+    </header>
+
+
+    <section class="outer-container">
+
+         <div class="mini-card-container-outer">
+         <div class="mini-card-container-inner">
+            <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-1">
+                  
+                  <div class="confirm-button" id="confirm-slot-1">
+
+                     <i class="fa fa-plus-square-o fa-2x"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-1" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+             <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-2">
+
+                  <div class="confirm-button" id="confirm-slot-2">
+
+                     <i class="fa fa-plus-square-o fa-2x"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-2" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+        
+                </div>
+              </div>
+            </div>
+
+             <div class="mini-card-cell">
+              <div class="mini-card-slot-container">
+                <div class="mini-card-slot" id="slot-3">
+
+                  <div class="confirm-button" id="confirm-slot-3">
+
+                     <i class="fa fa-plus-square-o fa-2x"></i>
+
+                  </div>
+
+                  <div class="mini-card" id="mini-card-3" data-id="">
+                    <p class="prop-name"></p>
+                    <div class="prop-details">
+                      <p class="prop-value"></p>
+                      <p class="prop-category"></p>
+                      <p class="more-less"></p>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+           
+         </div>
+        </div>
+
+        <div class="full-card-container">
+          
+          <div class="cards-carousel" id="cards-carousel">
+          
+          <div class="card-container">
+           
+            <div class="card" id="card-0">
+              <div class="card-top" style="background-color:#af1e2c">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14001.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sf.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Colin Kaepernick</h4>
+              <h5 class="prop-position">Quarterback</h5>
+              <h2 class="prop-value">219</h2>
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <a href="#" class="btn-or-less" data-prop='["0", "Colin Kaepernick", "219", "Passing Yards", "less", "#af1e2c"]'>Or Less</a> <a href="#" class="btn-or-more" data-prop='["0", "Colin Kaepernick", "219", "Passing Yards", "more", "#af1e2c"]'>Or More</a>
+              </div>
+              <div class="game-info">
+                (Game Info)
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-0">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["0"]' id="remove-0">Remove Pick</a>
+
+          </div>
+
+          <div class="card-container">
+           
+            <div class="card" style="border-color:#000" id="card-1">
+              <div class="card-top" style="background-color:#000000">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/5536.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/pit.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Ben Roethlisberger</h4>
+              <h5 class="prop-position">Quarterback</h5>
+              <h2 class="prop-value">219</h2>
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <a href="#" class="btn-or-less" data-prop='["1", "Ben Roethlisberger", "300", "Passing Yards", "less", "#000"]'>Or Less</a> <a href="#" class="btn-or-more" data-prop='["1", "Ben Roethlisberger", "300", "Passing Yards", "more", "#000"]'>Or More</a>
+              </div>
+              <div class="game-info">
+                (Game Info)
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-1">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["1"]' id="remove-1">Remove Pick</a>
+
+          </div>
+
+           <div class="card-container">
+           
+            <div class="card" style="border-color:#224970" id="card-2">
+              <div class="card-top" style="background-color:#224970">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14881.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sea.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Russell Wilson</h4>
+              <h5 class="prop-position">Quarterback</h5>
+              <h2 class="prop-value">330</h2>
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <a href="#" class="btn-or-less" data-prop='["2", "Russell Wilson", "330", "Passing Yards", "less", "#224970"]'>Or Less</a> <a href="#" class="btn-or-more" data-prop='["2", "Russell Wilson", "330", "Passing Yards", "more", "#224970"]'>Or More</a>
+              </div>
+              <div class="game-info">
+                (Game Info)
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-2">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["2"]' id="remove-2">Remove Pick</a>
+
+          </div>
+
+           <div class="card-container">
+           
+            <div class="card" style="border-color:#224970" id="card-3">
+              <div class="card-top" style="background-color:#224970">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/10456.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/sea.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Marshawn Lynch</h4>
+              <h5 class="prop-position">Running Back</h5>
+              <h2 class="prop-value">97</h2>
+              <h3 class="prop-category">Rushing Yards</h3>
+              <div class="prop-btn-group">
+                <a href="#" class="btn-or-less" data-prop='["3", "Marshawn Lynch", "97", "Rushing Yards", "less", "#224970"]'>Or Less</a> <a href="#" class="btn-or-more" data-prop='["3", "Marshawn Lynch", "97", "Rushing Yards", "more", "#224970"]'>Or More</a>
+              </div>
+              <div class="game-info">
+                (Game Info)
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-3">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["3"]' id="remove-3">Remove Pick</a>
+
+          </div>
+
+           <div class="card-container">
+           
+            <div class="card" style="border-color:#4C230E" id="card-4">
+              <div class="card-top" style="background-color:#4C230E">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/16736.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/cle.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Johnny Manziel</h4>
+              <h5 class="prop-position">Quarterback</h5>
+              <h2 class="prop-value">34</h2>
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <a href="#" class="btn-or-less" data-prop='["4", "Johnny Manziel", "34", "Passing Yards", "less", "#4C230E"]'>Or Less</a> <a href="#" class="btn-or-more" data-prop='["4", "Johnny Manziel", "34", "Passing Yards", "more", "#4C230E"]'>Or More</a>
+              </div>
+              <div class="game-info">
+                (Game Info)
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-4">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["4"]' id="remove-4">Remove Pick</a>
+
+          </div>
+
+          <div class="card-container">
+           
+            <div class="card" style="border-color:#052570" id="card-5">
+              <div class="card-top" style="background-color:#052570">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/5526.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500-dark/nyg.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">Eli Manning</h4>
+              <h5 class="prop-position">Quarterback</h5>
+              <h2 class="prop-value">340</h2>
+              <h3 class="prop-category">Passing Yards</h3>
+              <div class="prop-btn-group">
+                <a href="#" class="btn-or-less" data-prop='["5", "Eli Manning", "340", "Passing Yards", "less", "#052570"]'>Or Less</a> <a href="#" class="btn-or-more" data-prop='["5", "Eli Manning", "340", "Passing Yards", "more", "#052570"]'>Or More</a>
+              </div>
+              <div class="game-info">
+                (Game Info)
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-5">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["5"]' id="remove-5">Remove Pick</a>
+
+          </div>
+
+          <div class="card-container">
+           
+            <div class="card" style="border-color:#002E4D" id="card-4">
+              <div class="card-top" style="background-color:#002E4D">
+                <img class="headshot" src="http://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/14005.png&w=350&h=254" />
+                <img class="team-logo" src="http://a.espncdn.com/combiner/i?img=/i/teamlogos/nfl/500/dal.png?w=500&h=500&transparent=true" />
+              </div>
+              <div class="card-bottom">
+              <h4 class="prop-name">DeMarco Murray</h4>
+              <h5 class="prop-position">Running Back</h5>
+              <h2 class="prop-value">120</h2>
+              <h3 class="prop-category">Rushing Yards</h3>
+              <div class="prop-btn-group">
+                <a href="#" class="btn-or-less" data-prop='["6", "DeMarco Murray", "120", "Rushing Yards", "less", "#002E4D"]'>Or Less</a> <a href="#" class="btn-or-more" data-prop='["6", "DeMarco Murray", "120", "Rushing Yards", "more", "#002E4D"]'>Or More</a>
+              </div>
+              <div class="game-info">
+                (Game Info)
+              </div>
+            </div>
+            </div>
+
+            <a class="cancel-remove-pick cancel-pick" id="cancel-6">Cancel Pick</a>
+            <a class="cancel-remove-pick remove-pick" data-remove='["6"]' id="remove-6">Remove Pick</a>
+
+          </div>
+
+
+          </div>
+        </div>
+
+    </section>
+
+ 
+    
+     <script src="js/jquery-2.1.3.min.js"></script>
+     <script src="js/jgestures.min.js"></script>
+     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+     
+     <script>
+
+     $( document ).ready(function() {
+     
+        $('#cards-carousel').slick({
+            arrows: false,
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            responsive: [
+              {
+                breakpoint: 768,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '100px',
+                  slidesToShow: 1
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  arrows: false,
+                  centerMode: true,
+                  centerPadding: '25px',
+                  slidesToShow: 1
+                }
+              }
+            ]
+        });
+
+       // on swipe of carousel call Cancel function to cancel any active pick
+
+        $('#cards-carousel').on('swipe', function(event, slick, direction){
+            cancelPick();
+        });
+
+     
+    /* GLOBAL VARIABLES */
+
+    // variable to track filled mini card slots
+
+    var slot1Status = "";
+    var slot2Status = "";
+    var slot3Status = "";
+
+    var nextOpenSlot = "";
+    var nextMiniCard = "";
+
+    var slotsFull = "false";
+
+    // option to skip initial confirmations
+    var skipConfirmation = "false";
+
+
+     /* CLICK EVENTS */
+
+     $('.prop-btn-group a').bind('tapone', function(){     
+
+       var propData = $(this).data("prop");
+       popPick(propData);
+      
+      });
+
+
+      $('.cancel-pick').bind('tapone', function(){ 
+
+           cancelPick();
+
+      });
+
+
+      $('.remove-pick').bind('tapone', function(){ 
+
+           var removeData = $(this).data("remove");
+           removePick(removeData);
+
+      });
+
+
+
+      $('.confirm-button').bind('tapone', function(){ 
+
+           var propSlot = $(this).attr('id');
+           confirmPick(propSlot);
+
+      });
+
+
+      $('.mini-card').bind('tapone', function(){ 
+
+           var slideTo = $(this).attr('data-id');
+           $('#cards-carousel').slick('slickGoTo',slideTo);
+
+      });
+
+
+
+     /* FUNCTIONS */
+
+    var popPick = function(propData){
+
+      // Extrapolate Values in Array
+
+      var propId = propData[0];
+      var playerName = propData[1];
+      var propValue = propData[2];
+      var propCat = propData[3];
+      var propLessMore = propData[4];
+      var propHex = propData[5];
+      // console.log(propLessMore);
+
+      
+      // Update Buttons
+
+     // Get Buttons in Current Card
+
+     var currentCard = "#card-"+propId;
+     // console.log(currentCard);
+
+     
+     // Change Buttons based on less or more
+
+     if (propLessMore == "less") {
+
+     $(currentCard + ' .btn-or-more').removeClass('selected');
+     $(currentCard + ' .btn-or-more').addClass('unselected');
+     $(currentCard + ' .btn-or-less').removeClass('unselected');
+     $(currentCard + ' .btn-or-less').addClass('selected');
+
+     }  else {
+
+     $(currentCard + ' .btn-or-less').removeClass('selected');
+     $(currentCard + ' .btn-or-less').addClass('unselected');
+     $(currentCard + ' .btn-or-more').removeClass('unselected');
+     $(currentCard + ' .btn-or-more').addClass('selected');
+
+
+     }
+
+      
+    // Identify Confirm Buttons to Be shown. Check Global Variable. If they're all filled exit the function and enter the swap/replace function
+    
+
+    if (slot1Status == "") { nextOpenSlot = "#confirm-slot-1"; }
+    if ((slot1Status != "") && (slot2Status == "")) { nextOpenSlot = "#confirm-slot-2"; }
+    if ((slot1Status != "") && (slot2Status != "")) { nextOpenSlot = "#confirm-slot-3"; }
+    if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { slotsFull = "true"; }
+
+
+    // Identify Mini Cards to Build. Check Global Variable.  If they're all filled exit the function
+
+
+    if (slot1Status == "") { nextMiniCard = "#mini-card-1"; }
+    if ((slot1Status != "") && (slot2Status == "")) { nextMiniCard = "#mini-card-2"; }
+    if ((slot1Status != "") && (slot2Status != "")) { nextMiniCard = "#mini-card-3"; }
+    if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { swapReplace(propId); return false; }
+
+
+    // Build Mini Card
+
+    $(nextMiniCard + ' p.prop-name').html(playerName);
+    $(nextMiniCard + ' p.prop-value').html(propValue);
+    $(nextMiniCard + ' p.prop-category').html(propCat);
+    $(nextMiniCard + ' p.more-less').html(propLessMore);
+    $(nextMiniCard).css('background-color', propHex);
+    $(nextMiniCard).attr("data-id",propId);
+
+
+    // if we choose to skip the confirmations on initial picks then just confirm the pick. based on skipConfirmation variable
+
+    if (skipConfirmation != "true" || slotsFull == "true") {
+    showConfirm(propId);
+    } else {
+      confirmPick(nextOpenSlot);
+    }
+  
+  }
+
+
+    var showConfirm = function(propId){     
+
+
+     if (slotsFull == "false") {
+     $('#cancel-'+propId).css('display', 'block');
+     $(nextOpenSlot).css('display', 'block');
+     $(nextOpenSlot).removeClass('animated flipOutX');
+     $(nextOpenSlot).addClass('animated flipInX'); 
+
+      } else {
+     $('#cancel-'+propId).css('display', 'block');
+     $(".confirm-button").css('display', 'block');
+     $(".confirm-button").removeClass('animated flipOutX');
+     $(".confirm-button").addClass('animated flipInX'); 
+
+   }
+
+  }
+
+
+    // function to handle swapping or replacing a card. Might be just be a delegate function
+
+
+    var swapReplace = function(propId){
+
+      showConfirm(propId);
+      console.log("swapReplace");
+
+    }
+
+
+
+     var confirmPick = function(){     
+      
+     // confirm button id
+     var currentSlot = nextOpenSlot;
+
+     // current slot id
+     var currentContainer = $(currentSlot).parent().attr("id");
+     var currentCardID = $(currentSlot).siblings('.mini-card').attr("data-id");
+
+
+     $('.confirm-button').css('display', 'none');
+     $(currentSlot).siblings('.mini-card').css('display', 'block');
+     $(currentSlot).siblings('.mini-card').removeClass('animated bounceOutUp');
+     $(currentSlot).siblings('.mini-card').addClass('animated bounceInDown');
+     
+
+     $('.cancel-pick').css('display', 'none');
+     
+     // Show only current remove button
+
+     $('#remove-'+currentCardID).css('display', 'block');
+
+
+     // Update global slots variables so we know which one has picks
+
+     if (currentContainer == "slot-1") { 
+        slot1Status = currentCardID;
+      } else if (currentContainer == "slot-2") { 
+        slot2Status = currentCardID; 
+      } else if (currentContainer == "slot-3") { 
+        slot3Status = currentCardID;
+     }
+
+     checkifComplete();
+
+    }
+
+
+    var checkifComplete = function(){
+
+       if ((slot1Status != "") && (slot2Status != "") && (slot3Status != "")) { 
+          $('#btn-submit').css("color","#fff200");
+          $('#btn-submit').css("pointer-events", "auto");
+       } else {
+          $('#btn-submit').css("color","#ccc");
+          $('#btn-submit').css("pointer-events", "none");
+      }
+
+    } 
+
+    var cancelPick = function(){     
+     $('.btn-or-less').removeClass('selected unselected');
+     $('.btn-or-more').removeClass('selected unselected');
+     $('.cancel-pick').css('display', 'none');
+     $('.confirm-button').removeClass('flipInX');
+     $('.confirm-button').addClass('flipOutX');
+    }
+
+     
+     var removePick = function(removeData){     
+     
+     var removeId = removeData[0];
+     var slotRemovedFrom = $('.mini-card[data-id=' + removeId + ']').parent().attr("id");
+
+    // Update global slots variables so we know which one has picks
+
+     if (slotRemovedFrom == "slot-1") { 
+        slot1Status = "";
+      } else if (slotRemovedFrom == "slot-2") { 
+        slot2Status = ""; 
+      } else if (slotRemovedFrom == "slot-3") { 
+        slot3Status = "";
+     }
+
+     slotsFull="false";
+
+
+     $('#card-' +removeId + ' .btn-or-less').removeClass('selected unselected');
+     $('#card-' +removeId + ' .btn-or-more').removeClass('selected unselected');
+     $('#remove-' +removeId).css('display', 'none');
+
+
+     $('.mini-card[data-id=' + removeId + ']').removeClass('animated bounceInDown');
+     $('.mini-card[data-id=' + removeId + ']').addClass('animated bounceOutUp');
+    
+     checkifComplete();
+
+    }
+
+
+     });
+
+
+
+     </script>
+     
+  </body>
+</html>

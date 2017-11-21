@@ -1,0 +1,220 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="../foundation/css/foundation.css" />
+    <link rel="stylesheet" charset="utf-8" media="screen" href="http://a.espncdn.com/combiner/c?v=201401310325&css=fonts/bentonsans.css,fonts/bentonsansbold.css,fonts/bentonsanslight.css,fonts/bentonsansmedium.css,fonts/bentonsanscond.css,fonts/bentonsanscondbold.css,fonts/bentonsanscondmedium.css" />
+    <script src="../foundation/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+  
+  <style>
+  
+  .grid {
+  padding: 0 0 0 12px;
+  max-width:1280px;
+  margin: 0 auto;
+  background-color:#eee;
+  }
+  
+  .grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  
+  [class*='col-'] {
+  float: left;
+	}
+	
+.col-1 {
+  width: 8.333%;
+}
+
+.col-3 {
+	width:25%
+}
+
+.col-4 {
+  width: 100%;
+}
+
+.col-8 {
+  width: 100%;
+}
+
+[class*='col-'] {
+  padding-right: 12px;
+}
+
+[class*='col-']:nth-last-of-type(2) {
+  padding-right: 12px;
+}
+
+p {
+height:200px;
+background-color:orange;
+margin-bottom:12px;
+}
+
+
+@media (min-width: 600px) {
+
+.col-4 {
+  width: 50%;
+}
+
+.col-8 {
+  width: 100%;
+}
+
+[class*='col-']:nth-last-of-type(2) {
+  padding-right: 12px;
+}
+
+[class*='col-']:last-of-type {
+  padding-right: 12px;
+}
+
+
+}
+
+
+@media (min-width: 900px) {
+
+.col-4 {
+  width: 33.333%;
+}
+
+.col-8 {
+  width: 66.666%;
+}
+
+
+[class*='col-']:nth-last-of-type(2) {
+  padding-right: 12px;
+}
+
+[class*='col-']:last-of-type {
+  padding-right: 12px;
+}
+
+
+}
+
+
+
+
+  </style>
+  
+  
+  <div class="grid">
+  <div class="col-1">
+     <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+  <div class="col-1">
+	 <p></p>
+  </div>
+</div>
+
+
+<div class="grid">
+  <div class="col-3">
+     <p></p>
+  </div>
+  <div class="col-3">
+	 <p></p>
+  </div>
+  <div class="col-3">
+	 <p></p>
+  </div>
+   <div class="col-3">
+	 <p></p>
+  </div>
+</div>
+
+  
+
+<div class="grid">
+  <div class="col-4">
+     <p></p>
+  </div>
+  <div class="col-4">
+	 <p></p>
+  </div>
+  <div class="col-4">
+	 <p></p>
+  </div>
+  <div class="col-4">
+	 <p></p>
+  </div>
+  <div class="col-4">
+	 <p></p>
+  </div>
+  <div class="col-4">
+	 <p></p>
+  </div>
+</div>
+
+
+<div class="grid">
+ <div class="col-8">
+     <p></p>
+  </div>
+  <div class="col-4">
+  <div class="ad" style="width:300px; height:250px; background-color:red; margin:0 auto;"></div>
+  </div>
+</div>
+
+    
+    <script src="../foundation/js/vendor/jquery.js"></script>
+    <script src="../foundation/js/foundation.min.js"></script>
+
+    <script>
+      $(document).foundation();
+      
+      $('#main-score').waypoint(function() {
+  		console.log('45 pixels from the top');
+  		$('#main-score').toggleClass('main-score-fixed');
+  		$('#live-action').toggleClass('live-fixed');
+	}, { offset: 45 });
+	
+	$('#feed-row').waypoint(function() {
+  		console.log('poop');
+  		$('#mini-gamecast').toggleClass('mini-gamecast-inview');
+	}, { offset: 140 });
+    </script>
+  </body>
+</html>
