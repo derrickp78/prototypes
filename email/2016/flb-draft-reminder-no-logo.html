@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ESPN Fantasy Draft Reminder</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <style type="text/css">
+            body, table, td, a{ -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+            table, td{ mso-table-lspace: 0pt; mso-table-rspace: 0pt; } 
+            img{ -ms-interpolation-mode: bicubic; } 
+            img{ border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+            table{ border-collapse: collapse !important; }
+            body{ height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+            a[x-apple-data-detectors] {
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+            div[style*="margin: 16px 0;"] { margin: 0 !important; }
+
+
+        <!-- Progressive Enhancements -->
+        
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+        .button-td:hover,
+        .button-a:hover {
+            background: #555555 !important;
+            border-color: #555555 !important;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 480px) {
+
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid,
+            .fluid-centered {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                Margin-left: auto !important;
+                Margin-right: auto !important;
+            }
+            /* And center justify these ones. */
+            .fluid-centered {
+                Margin-left: auto !important;
+                Margin-right: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 96% !important;
+                max-width: 96% !important;
+                direction: ltr !important;
+                padding-left:0 !important;
+                padding-right:0 !important;
+                Margin-left: auto !important;
+                Margin-right: auto !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+        
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                Margin-left: auto !important;
+                Margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            .logo-cell {padding-bottom:15px !important; padding-top:0 !important;}
+
+             .draft-time {width:294px; margin:0 auto;}
+
+             .action-button {margin:0 auto;}
+                
+        }
+
+           
+
+        </style>
+    </head>
+
+    <body style="margin: 0 !important; padding: 0 !important; background-color: #eeeeee;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" align="center" style="border:0">
+        <tr>
+            <td></td>
+            <td width="600">
+             <div style="display:block; max-width:600px !important; width:100%; margin:0 auto">
+        <!--[if (gte mso 9)|(IE)]>
+        <table border="0" cellspacing="0" cellpadding="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="600" align="center" style="width:100%; max-width: 600px; min-width: 296px; margin: 0 auto;">
+            <tr>
+                <td align="center">
+                    
+                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <tr>
+                            <td align="center" valign="top">
+                                <a href="#" target="_blank" style="outline: 0; text-decoration: none;">
+                                    <img alt="ESPN Daily" src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/flb/header.png" width="600" border="0" style="width: 600px; height:auto !important; max-width: 100%;">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    
+                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <tbody>
+                        <tr>
+                        <th valign="top" width="70%" class="stack-column-center" style="font-weight:400">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                                <tr>
+                            <th align="center" class="stack-column-center" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666666; line-height: 18px; padding: 25px 15px 0px 15px; font-weight:400">Your online draft has been scheduled.
+                            </th>
+                        </tr>
+                        <tr>
+                            <th align="center" class="stack-column-center" style="font-size: 32px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #333; line-height: 32px; padding: 8px 15px 0px 15px; font-weight:700;">Cue the Beer and Duckboats
+                            </th>
+                        </tr>
+                        <tr>
+                            <th align="center" class="stack-column-center" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #333; line-height: 18px; padding: 4px 15px 8px 15px; font-weight:400">The League of Ordinary Gentleman
+                            </th>
+                        </tr>
+                        <tr>
+                            <th align="center" class="stack-column-center" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #333; line-height: 18px; padding: 4px 15px 15px 15px; font-weight:400">
+                             <table class="draft-time" border="0" cellpadding="0" cellspacing="0" width="310" style="width:100%; max-width: 310px;">
+                                <tr>
+                                    <th align="center" width="50" style="font-size: 15px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #333; font-weight:700; line-height: 18px; padding: 15px 0px 15px 15px; background-color:#f2f2f2; white-space: nowrap;"> <img alt="Calendar" src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/ffl/icon-calendar.png" width="32" height="32" border="0"></th>
+                                    <th align="center" valign="middle" style="font-size: 15px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #333; font-weight:700; line-height: 18px; padding: 15px 15px 15px 8px; background-color:#f2f2f2;">
+                                       SAT, SEPTEMBER 22<br/>10:00 PM ET
+                                    </th>
+                                </tr>
+                             </table>
+                            </th>
+                        </tr>
+                        
+                    </table>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>        
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <th align="center" style="padding-top:10px; background-color:#ffffff">
+                   
+                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <tbody>
+                        <tr>
+                        <th align="right" valign="top" style="padding: 8px 15px 8px 15px;" class="stack-column-center">
+                            <a href="http://espn.com" target="_blank" style="outline: 0;">
+                                <img src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/btn-league-home.png" width="190" style="display: block; width: 190px; max-width:100%" alt="Visit League Home" border="0" class="action-button">
+                            </a>
+        
+                        </th>
+                        <th align="left" valign="top" style="padding: 8px 15px 30px 15px;" class="stack-column-center">
+                        <a href="http://espn.com" target="_blank" style="outline: 0;">
+                                <img src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/btn-ready-to-draft.png" width="190" style="display: block; width: 190px; max-width:100%" alt="Get Ready to Draft" border="0" class="action-button">
+                            </a>
+
+                        </th>
+                        </tr>
+                    </tbody>
+                </table>        
+                    
+                </th>
+            </tr>
+
+             <tr>
+                <td align="center" style="padding:0 15px; background-color:#fff">
+                    
+                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                    <tbody>
+                        <tr>
+                        <td align="center" valign="top" width="70" style="width:70px; padding: 15px 0px 15px 0px; border-top: 1px solid #eee;">
+
+                                <img src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/ffl/sticker-berry-toldyou.png" width="70" style="display: block; width: 70px; max-width:100%" alt="Matthew Berry" border="0">
+                            </a>
+        
+                        </td>
+                        <td align="left" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666; line-height: 18px; padding: 15px 15px 15px 15px; border-top: 1px solid #eee;">
+                            <table>
+                                <tr><td style="font-size: 14px; font-weight:700; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; line-height: 18px; padding: 0px 15px 8px 0px;"><a href="#" style="outline: 0; color: #3366cc !important;">ESPN's Free Mock Drafts</a></td></tr>
+                                <tr><td align="left" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666; line-height: 18px; padding: 0px 15px 0px 0px;">While NFL stars train for the regular season, fantasy owners also need practice. Be sure to hone your skills with our Free Mock Drafts.
+                        </td></tr>
+                            </table>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td align="center" valign="top" width="70" style="width:70px; padding: 15px 0px 15px 0px; border-top: 1px solid #eee;">
+
+                                <img src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/ffl/sticker-berry-cupid.png" width="63" style="display: block; width: 63px; max-width:100%" alt="Visit League Home" border="0">
+                            </a>
+        
+                        </td>
+                        <td align="left" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666; line-height: 18px; padding: 15px 15px 15px 15px; border-top: 1px solid #eee;">
+                            <table>
+                                <tr><td style="font-size: 14px; font-weight:700; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; line-height: 18px; padding: 0px 15px 8px 0px;"><a href="#" style="outline: 0; color: #3366cc !important;">Matthew Berry's Love/Hate</a></td></tr>
+                                <tr><td align="left" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666; line-height: 18px; padding: 0px 15px 0px 0px;">Want expert advice? Take a look at Matthew Berry's Love/Hate for the latest and greatest Fantasy Football pointers.
+                        </td></tr>
+                            </table>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td align="center" valign="top" width="70" style="width:70px; padding: 15px 0px 15px 0px; border-top: 1px solid #eee;">
+
+                                <img src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/ffl/sticker-berry-thief.png" width="48" style="display: block; width: 48px; max-width:100%" alt="Visit League Home" border="0">
+                            </a>
+        
+                        </td>
+                        <td align="left" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666; line-height: 18px; padding: 15px 15px 15px 15px; border-top: 1px solid #eee;">
+                            <table>
+                                <tr><td style="font-size: 14px; font-weight:700; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; line-height: 18px; padding: 0px 15px 8px 0px;"><a href="#" style="outline: 0; color: #3366cc !important;">Cheat Sheets</a></td></tr>
+                                <tr><td align="left" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666; line-height: 18px; padding: 0px 15px 0px 0px;">The best ESPN fantasy advice all in one place. Take a look at our industry leading expert analysis, and find a Cheat Sheet to meet your needs.
+                        </td></tr>
+                            </table>
+                        </td>
+                        </tr>
+                         <tr>
+                        <td align="center" valign="top" width="70" style="width:70px; padding: 15px 0px 15px 0px; border-top: 1px solid #eee;">
+
+                                <img src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/ffl/sticker-berry-good.png" width="48" style="display: block; width: 48px; max-width:100%" alt="Visit League Home" border="0">
+                            </a>
+        
+                        </td>
+                        <td align="left" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666; line-height: 18px; padding: 15px 15px 25px 15px; border-top: 1px solid #eee;">
+                            <table>
+                                <tr><td style="font-size: 14px; font-weight:700; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; line-height: 18px; padding: 0px 15px 8px 0px;"><a href="#" style="outline: 0; color: #3366cc !important;">Test Web Draft Compatibility</a></td></tr>
+                                <tr><td align="left" style="font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666; line-height: 18px; padding: 0px 15px 0px 0px;">Make sure your browser is setup for the optimal drafting experience by taking advantage of our Web Draft Compatibility tool.
+                        </td></tr>
+                            </table>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>        
+                    
+                </td>
+            </tr>
+
+                <tr><td bgcolor="#eeeeee" style="border-top: 1px solid #c6c6c8; padding: 5px 0;"></td></tr>
+
+            <tr>
+                <td align="center">
+                    
+                    <table bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <tr>
+                            <td align="center" style="padding: 10px 10px 20px">
+                                <a href="#" target="_blank" style="outline: 0;">
+                                    <img src="http://espn.go.com/design_mockups/htmlEmailSample/final/img/ad.png" width="300px" height="250" border="0" alt="Pepsi: All for big blue - NY - Offical soft drink of the New York Giants" style="display: block; width: 300px; height: 250px;">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    
+                    <table bgcolor="#ffffff" align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+                        <tr>
+                            <td align="left" valign="top" style="border-bottom: 1px solid #e2e3e5; padding: 20px 15px;">
+                                
+                                <div style="display:inline-block; max-width:100%; vertical-align:top; width:100%;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
+                                        <tr>
+                                            <td align="left" valign="top">
+                                                <a href="#" target="_blank" style="outline: 0;">
+                                                    <img src="https://dl.dropboxusercontent.com/u/15333915/espn/fantasy/email/2016/img/espnFantasyAppIcon.png" width="56" height="56" style="display: block; width: 56px; height: 56px;" alt="ESPN Fantasy App" border="0">
+                                                </a>
+                                            </td>
+                                            <td align="left" valign="top" style="font-size: 16px; line-height:20px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; font-weight: bold; color: #1a1a1a; padding: 5px 15px 0;">
+                                                <a href="http://espn.com" target="_blank" style="outline: 0; color: #1a1a1a; text-decoration: none;">
+                                                    ESPN Fantasy App
+                                                     <span align="left" style="display: block; font-size: 14px; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; color: #666666; line-height: 18px; font-weight: normal;">
+                                                        Get the latest news and scores from your teams!
+                                                    </span>
+                                                </a>
+                                            </td>
+                                            <td align="left" valign="top">
+                                                <a href="http://espn.com" target="_blank" style="outline: 0;">
+                                                    <img src="http://espn.go.com/design_mockups/htmlEmailSample/final/img/freeBTN.png" width="70" height="38" style="display: block; width: 70px; height: 38px;" alt="Free" border="0">
+                                                </a>
+                                            </td>
+                                        </tr>  
+                                    </table>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                    
+                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px;">
+                        <tr>
+                            <td align="center" valign="top" style="border-bottom: 1px solid #e2e3e5; padding: 22px 15px 20px;">
+                                
+                                <div style="display:inline-block; max-width:100%; min-width:100%; vertical-align:top; width:100%;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:100%;">
+                                        <tr>
+                                            <td align="left" valign="middle" width="150" style="color: #545556; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; font-size: 14px; padding: 4px 0; text-transform: uppercase; width: 150px;">
+                                                Follow us
+                                            </td>
+                                            <td>
+                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td align="right" valign="middle">
+                                                            <a href="#" target="_blank" style="outline: 0; text-decoration: none;">
+                                                                <img src="http://espn.go.com/design_mockups/htmlEmailSample/final/img/twitter.png" width="25" height="21" style="display: block; width: 25px; height: 21px;" alt="Twitter" border="0">
+                                                            </a>
+                                                        </td>
+                                                        <td align="right" valign="middle">
+                                                            <a href="#" target="_blank" style="outline: 0; text-decoration: none;">
+                                                                <img src="http://espn.go.com/design_mockups/htmlEmailSample/final/img/facebook.png" width="20" height="21" style="display: block; width: 20px; height: 21px;" alt="Facebook" border="0">
+                                                            </a>
+                                                        </td>
+                                                        <td align="right" valign="middle">
+                                                            <a href="#" target="_blank" style="outline: 0; text-decoration: none;">
+                                                                <img src="http://espn.go.com/design_mockups/htmlEmailSample/final/img/instagram.png" width="20" height="21" style="display: block; width: 20px; height: 21px;" alt="Instagram" border="0">
+                                                            </a>
+                                                        </td>
+                                                        <td align="right" valign="middle">
+                                                            <a href="#" target="_blank" style="outline: 0; text-decoration: none;">
+                                                                <img src="http://espn.go.com/design_mockups/htmlEmailSample/final/img/pintrest.png" width="20" height="21" style="display: block; width: 20px; height: 21px;" alt="Pinterest" border="0">
+                                                            </a>
+                                                        </td>
+                                                        <td align="right" valign="middle">
+                                                            <a href="#" target="_blank" style="outline: 0; text-decoration: none;">
+                                                                <img src="http://espn.go.com/design_mockups/htmlEmailSample/final/img/snapChat.png" width="20" height="21" style="display: block; width: 20px; height: 21px;" alt="Snap Chat" border="0">
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">
+                   
+                    <table bgcolor="#eeeeee" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                        <tr>
+                            <td align="center" valign="middle" style="color: #717171; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 15px; padding: 20px 15px 10px;">
+                                This email was sent to: sample@gmail.com. Please do not reply to this email as this address is not monitored.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle" style="color: #717171; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 15px; padding: 0 15px 10px;">
+                                This email contains an advertisement from: ESPN, ESPN Plaza, Bristol, CT 06010. To unsubscribe from all types of future commercial email from ESPN, regarding its products and services, <a href="#" style="outline: 0; color: #2b66d2; font-weight: bold; text-decoration: none;">click here</a>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle" style="color: #717171; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 15px; padding: 0 15px 10px;">
+                                When you registered with our site, you asked to receive the MyESPN Today newsletter. If you wish to cancel this email newsletter, <a href="#" style="outline: 0; color: #2b66d2; font-weight: bold; text-decoration: none;">click here</a>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle" style="color: #717171; font-family: -apple-system, 'Roboto', Helvetica, Arial, sans-serif; font-size: 10px; line-height: 15px; padding: 0 15px 15px;">
+                                &copy; ESPN Internet Ventures. All Rights Reserved.
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </td>
+            </tr>
+        </table>
+         <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+                </div>
+                </td>
+            <td></td>
+            </tr>
+        </table>
+
+        <!-- hack to force gmail to not show optimized layout -->
+         <div style="display: none; white-space: nowrap; line-height: 2px; color: #eeeeee">
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        </div>
+        
+    </body>
+</html>
