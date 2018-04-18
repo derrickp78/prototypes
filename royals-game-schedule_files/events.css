@@ -1,0 +1,49 @@
+.ipWidget-Events
+    .myl-module .events:after {
+    content: "Events";
+}
+.ipWidget-Events
+    .myl-module-events .events {
+    height: 100%;
+    background: #FFFFFF;
+    overflow-y: auto;
+    padding-bottom: 15px;
+    display: block;
+}
+.ipWidget-Events
+    .myl-module-events .events .event-row {
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+}
+.ipWidget-Events
+    .myl-module-events .events .event-row p {
+    white-space: pre;
+}
+/*the date/time label*/
+.ipWidget-Events
+    .myl-module-events .events .event-row span:nth-child(1) {
+    font-family: 'Fjalla One';
+    color: rgba(50,50,100,0.7);
+    float: left;
+    margin-left:  2%;
+}
+/*the event description label*/
+.ipWidget-Events
+    .myl-module-events .events .event-row span:nth-child(3) {
+    float: right;
+    margin-right: 2%;
+    font-family: Glegoo;
+}
+.ipWidget-Events
+    .myl-module-events .events .event-row span {
+    float: left;
+    margin-left: 2%;
+}
+.ipWidget-Events
+    .myl-module-events .events .event-row .signup-link {
+    float: right;
+    margin-right: 2%;
+    width: 16px;
+    height: 16px;
+}

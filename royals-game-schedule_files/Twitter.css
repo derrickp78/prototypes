@@ -1,0 +1,22 @@
+#twitter_form label
+{
+    float: left;
+    margin-right: 5px;
+    line-height: 2.5;
+    width: 118px;
+}
+
+#twitter_form input, #twitter_form select
+{
+	display: inline-block;
+}
+
+#twitter_form input
+{
+	width: 245px;
+}
+
+#twitter_form select
+{
+	width: 84px;
+}

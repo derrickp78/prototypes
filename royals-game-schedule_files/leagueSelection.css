@@ -1,0 +1,100 @@
+.ipWidget-LeagueSelection
+    .myl-module-leagueSelection .league-wrapper:after {
+    content: "League";
+}
+.ipWidget-LeagueSelection
+    .myl-module-leagueSelection .league-wrapper {
+    font-family: 'Glegoo';
+    font-weight: 700;
+}
+.ipWidget-LeagueSelection
+    .myl-module-leagueSelection h4.league {
+    display: none;
+    font-family: 'Glegoo';
+    font-weight: 700;
+}
+.ipWidget-LeagueSelection
+    .myl-module-leagueSelection h4.league.current {
+    display: block;
+}
+.ipWidget-LeagueSelection
+    .myl-module-leagueSelection:active {
+    box-shadow: 5px 5px 5px 5px rgba(100,100,100,0.5),
+                -5px -5px 5px 5px rgba(100,100,100,0.5);
+    -webkit-transition: box-shadow 0.15s;
+    transition: box-shadow 0.15s;
+}
+.ipWidget-LeagueSelection
+    .myl-module-game.myl-module-leagueSelection .league-select {
+    padding: 2px 0 5px 0;
+    margin: 0;
+    background: #f4f4f4;
+    border:  none;
+    box-shadow: none;
+    outline:  none;
+    font-family:  'Glegoo';
+    /*font-weight: bold;*/
+    font-size:  18px;
+    text-align: 'center';
+}
+.ipWidget-LeagueSelection
+    .myl-module-game.myl-module-leagueSelection .league-wrapper {
+    margin: 0.37em 0;
+    background: #f4f4f4;
+    cursor: pointer;
+    /*box-shadow: 5px 5px 5px 5px rgba(100,100,100,0.5),
+                -5px -5px 5px 5px rgba(100,100,100,0.5);
+    -webkit-transition: box-shadow 0.15s;
+    transition: box-shadow 0.15s;*/
+}
+.ipWidget-LeagueSelection
+    .myl-module-game.myl-module-leagueSelection .league {
+    font-size: 18px;
+    display: none;
+    padding: 10px 0;
+}
+.myl-module.myl-module-leagueSelection {
+    padding: 0;
+}
+.myl-module.myl-module-leagueSelection .options-menu {
+    display: none;
+    -webkit-transition: display 2s;
+    transition: display 2s;
+    position: absolute;
+    right: 5px;
+    top: -10%;
+    padding-top: 0;
+    z-index: 50;
+    height: 100%;
+    -webkit-transform: translateZ(0); /* webkit flicker fix */
+    -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+}
+.myl-module.myl-module-leagueSelection .option {
+    position: relative;
+    font-family: 'entypo';
+    /*font-size: 40px;*/
+    color: rgba(50,50,100,0.5);
+    display: inline-block;
+    height: 100%;
+    margin: 0 5px 0 5px;
+    padding-top: 0;
+    font-weight: normal;
+    font-style: normal;
+}
+.myl-module.myl-module-leagueSelection .option:hover {
+    color: rgba(50,50,100,1);
+}
+.myl-module.myl-module-leagueSelection .pause-leagueSelection:after {
+    line-height: 1;
+    font-size: 3em;
+    height: 0;
+    vertical-align: middle;
+
+}
+.myl-module.myl-module-leagueSelection .pause-all:after {
+    font-size: 3em;
+    height: 0;
+    width: 40px;
+    line-height: 1;
+    vertical-align: middle;
+}

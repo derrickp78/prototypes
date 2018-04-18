@@ -1,0 +1,11 @@
+.ipWidget-Officials
+    .myl-module .officials:after {
+   content: "Officials";
+}
+.ipWidget-Officials
+    .myl-module-officials .officials {
+    background: #f4f4f4;
+    padding-bottom: 10px;
+    font-family: 'Fjalla One';
+    font-size: 25px;
+}

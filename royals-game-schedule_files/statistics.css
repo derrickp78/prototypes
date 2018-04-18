@@ -1,0 +1,43 @@
+.ipWidget-Statistics
+   .myl-module .statistics:after {
+   content: "Statistics";
+}
+.ipWidget-Statistics
+    .myl-module-statistics .statistics {
+    height: 100%;
+    background: #FFFFFF;
+    overflow-y: auto;
+    min-height: 250px;
+}
+.ipWidget-Statistics
+    .myl-module-statistics .statistics .statistics-header {
+    font-family: 'Fjalla One';
+    text-align: left;
+    color: rgba(50,50,100,0.7);
+    text-align:center;
+    font-size: 14pt;
+    height: auto;
+    display: block;
+}
+.ipWidget-Statistics
+    .myl-module-statistics .statistics .statistics-row {
+    text-align: left;
+}
+.ipWidget-Statistics
+    .myl-module-statistics .statistics .statistics-row .player {
+    margin-left: 2%;
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    text-align: left;
+    font-size: 12pt;
+}
+.ipWidget-Statistics
+    .myl-module-statistics .statistics .statistics-row .stat-value {
+    margin-right: 2%;
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    text-align: right;
+    font-size: 12pt;
+}

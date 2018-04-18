@@ -1,0 +1,211 @@
+.ipWidget-MultiReg:after {
+   content: "MultiReg";
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .multiReg {
+    margin-top: 5px;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg {
+    line-height: 1.3;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .multireg {
+    background: #FDFDFD;
+    padding-bottom: 10px;
+    font-family: 'Fjalla One';
+    font-size: 18px;
+    height: 200px;
+}
+
+@media screen and (max-width: 480px) {
+	.ipWidget-MultiReg
+        .myl-module-multireg .tab.open-reg, .tab.upcoming-reg {
+        border-width: 1px 1px 1px 1px;
+        border-radius: 5px 5px 5px 5px;
+	}
+    .ipWidget-MultiReg
+        .myl-module-multireg {
+	    line-height: 1.3;
+	}
+    .ipWidget-MultiReg
+        .myl-module-multireg .multireg {
+	    font-size: 14px;
+	}
+	.ipWidget-MultiReg
+        .myl-module-multireg div.reg-row {
+	   min-height:25px;
+	}
+	.ipWidget-MultiReg
+        .myl-module-multireg span.children-count {
+	    height: 1.2em;
+	    width: 32px;
+	    margin-top: 0.18em;
+	    margin-right: 11px;
+	    font-size: 15px;
+	}
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .tabsRow {
+    display: table;
+    margin-bottom: 3px;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .tab.open-reg, .tab.upcoming-reg {
+    width: 46%;
+    font-weight: bold;
+    font-size: 18px;
+    overflow-x: hidden;
+    cursor: pointer;
+    color: rgba(81, 81, 81, 0.72);
+    display: table-cell;
+    height: 0;
+    height: 100%;
+    margin: auto;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .tab.open-reg.active-tab, .tab.upcoming-reg.active-tab {
+    background-color: #BCBCBC;
+    padding: 1px;
+    border-radius: 6px;
+    color: black;
+    vertical-align: top;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-accordian-wrapper {
+    height: 86%;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: #5E5E5E;
+    overflow-y: auto;
+    overflow-x:hidden;
+    -webkit-box-shadow: inset 0px 0px 17px 3px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 17px 3px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 17px 3px rgba(0,0,0,0.75);
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-box {
+    margin: auto;
+    width: 98%;
+    border-color: rgb(117, 117, 117);
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-radius: 6px 6px 6px 6px;
+    padding: 3px;
+    
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-row {
+	min-height:32px;
+	border-bottom: #8B8B8B;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-row span {
+	vertical-align: sub;
+	vertical-align: -webkit-baseline-middle;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-row .league-name {
+	width: 78%;
+    display: inline-block;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-child > .reg-row > .league-name {
+	width: 100%;
+    display: inline-block;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.reg-child > .reg-row > .league-name {
+    width: 71%;
+    display: inline-block;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent:hover, .reg-row:hover {
+    cursor:pointer;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent, .reg-child {
+	display: none;
+	text-align: left;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level, .reg-parent.top-level > .reg-parent, .reg-parent.top-level > .reg-child {
+    display:block;
+}
+
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level > .reg-row {
+    background: rgba(230,230,230,1);
+	background: -moz-linear-gradient(top, rgba(230,230,230,1) 0%, rgba(214,214,214,1) 21%, rgba(199,199,199,1) 50%, rgba(153,153,153,1) 75%, rgba(115,115,115,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(230,230,230,1)), color-stop(21%, rgba(214,214,214,1)), color-stop(50%, rgba(199,199,199,1)), color-stop(75%, rgba(153,153,153,1)), color-stop(100%, rgba(115,115,115,1)));
+	background: -webkit-linear-gradient(top, rgba(230,230,230,1) 0%, rgba(214,214,214,1) 21%, rgba(199,199,199,1) 50%, rgba(153,153,153,1) 75%, rgba(115,115,115,1) 100%);
+	background: -o-linear-gradient(top, rgba(230,230,230,1) 0%, rgba(214,214,214,1) 21%, rgba(199,199,199,1) 50%, rgba(153,153,153,1) 75%, rgba(115,115,115,1) 100%);
+	background: -ms-linear-gradient(top, rgba(230,230,230,1) 0%, rgba(214,214,214,1) 21%, rgba(199,199,199,1) 50%, rgba(153,153,153,1) 75%, rgba(115,115,115,1) 100%);
+	background: linear-gradient(to bottom, rgba(230,230,230,1) 0%, rgba(214,214,214,1) 21%, rgba(199,199,199,1) 50%, rgba(153,153,153,1) 75%, rgba(115,115,115,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#737373', GradientType=0 );
+	border-radius:3px 3px 0px 0px;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent .expander {
+    font-size:28px;
+}
+
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-child > .reg-row .league-name, .reg-parent.top-level .reg-parent > .reg-row .league-name {
+    padding-left:2%;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level .reg-parent > .reg-row .league-name {
+    padding-left:0px;
+}
+
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level > .reg-child > .reg-row {
+    margin-left: 4%;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level > .reg-child > .reg-child > .reg-row {
+    margin-left: 9%;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level > .reg-child > .reg-child > .reg-child > .reg-row {
+    margin-left: 14%;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level > .reg-child > .reg-child > .reg-child > .reg-child > .reg-row {
+    margin-left: 19%;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level > .reg-child > .reg-child > .reg-child > .reg-child > .reg-child > .reg-row {
+    margin-left: 24%;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level > .reg-child > .reg-child > .reg-child > .reg-child > .reg-child > .reg-child > .reg-row {
+    margin-left: 25%;
+}
+
+.ipWidget-MultiReg
+    .myl-module-multireg .children-count {
+    float: right;
+    width: 35px;
+    height: 1.2em;
+    background: #E8E8E8;
+    border-color: #A3A3A3;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-radius: 40px / 20px;
+    -webkit-border-radius: 40px / 20px;
+    border-radius: 50px / 48px;
+    text-align: center;
+    margin-top: 0.4em;
+    margin-right: 11px;
+    color: #767676;
+    font-size: 17px;
+}
+.ipWidget-MultiReg
+    .myl-module-multireg .reg-parent.top-level > .reg-row > .children-count {
+	background: #3B3B3B;
+	color:white;
+}

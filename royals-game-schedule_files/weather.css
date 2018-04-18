@@ -1,0 +1,13 @@
+.ipWidget-Weather
+   .myl-module .weather:after {
+   content: "Weather";
+}
+.ipWidget-Weather
+    .myl-module-weather {
+    height: auto;
+}
+
+.ipWidget-Weather
+    .myl-module-weather .weather {
+    height: auto;
+}

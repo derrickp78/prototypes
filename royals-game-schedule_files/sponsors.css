@@ -1,0 +1,21 @@
+.ipWidget-Sponsors
+   .myl-module-sponsors .sponsors:after {
+   content: "Sponsors";
+}
+.ipWidget-Sponsors
+    .myl-module-sponsors .sponsors {
+    background: #f4f4f4;
+}
+.ipWidget-Sponsors
+    .myl-module-sponsors .sponsors ~ .sponsors {
+    display: none;
+}
+.sponsor-image img{
+    max-width: 100%;
+}
+.ipWidget-Sponsors div.myl-module-sponsors h4 {
+    margin-left: 15px;
+    color: rgba(0,0,0,0.75);
+    font-weight: 300;
+    font-size: 22px;
+}

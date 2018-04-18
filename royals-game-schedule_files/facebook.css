@@ -1,0 +1,27 @@
+#facebook_form label 
+{
+	margin-right: 5px;
+	width: 135px;
+	line-height: 2.5;
+	float: left;
+}
+
+#facebook_form input, #facebook_form select, #facebook_form .checkbox
+{
+	display: inline-block;
+}
+
+#facebook_form input
+{
+	width: 245px;
+}
+
+#facebook_form select
+{
+	width: 84px;
+}
+
+#facebook_form input[type='checkbox']
+{
+	width: 15px;
+}

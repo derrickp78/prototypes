@@ -1,0 +1,4 @@
+.ipWidget-Announcements
+    .myl-module-announcements .announcements:after {
+    content: "News";
+}

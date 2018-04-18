@@ -1,0 +1,75 @@
+.ipWidget-Calendar
+   .myl-module .calendar:after {
+   content: "Calendar";
+}
+.ipWidget-Calendar
+    .myl-module-calendar .calendar {
+    font-family: 'Open Sans';
+    background: #f4f4f4;
+    height: 100%;
+}
+.ipWidget-Calendar
+    .myl-module-calendar .mini-calendar {
+    height: 86%;
+    display: none;
+}
+.ipWidget-Calendar
+    .myl-module-calendar .mini-calendar.display {
+    display: block;
+}
+.ipWidget-Calendar
+    .myl-module-calendar .calendar-month {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 35px;
+}
+.ipWidget-Calendar
+    .myl-module-calendar table {
+    border-collapse: separate;
+    margin-bottom: 0px;
+    height: 100%;
+}
+.ipWidget-Calendar
+    .myl-module-calendar td {
+    padding: 6px;
+    border-bottom: 1px solid #dfdfdf;
+}
+.ipWidget-Calendar
+    .myl-module-calendar .calendar-days {
+    font-size: 9pt;
+    text-align: center;
+    font-family: 'Open Sans';
+}
+.ipWidget-Calendar
+    .myl-module-calendar td.today {
+    border: 1px solid #35a6ff;
+    border-top: 4px solid #35a6ff;
+    padding-top: 2px;
+    font-weight: bold;
+}
+.ipWidget-Calendar
+    .myl-module-calendar td.event {
+    padding-bottom: 2px;
+    border: 1px solid #a5ff76;
+    border-bottom: 4px solid #A5FF76;
+}
+.ipWidget-Calendar
+    .myl-module-calendar td.event .eventPopup {
+    position: absolute;
+    left: 5%;
+    top: 35px;
+    display: none;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #aaa;
+    width: 90%;
+    max-height: 250px;
+    overflow: hidden;
+    border-radius: 3px;
+    -webkit-box-shadow: 1px 1px 5px 2px rgba(0,0,0,.4);
+    box-shadow: 1px 1px 5px 2px rgba(0,0,0,.4);
+}
+.ipWidget-Calendar
+    .myl-module-calendar td.event:hover  {
+    display: block;
+}

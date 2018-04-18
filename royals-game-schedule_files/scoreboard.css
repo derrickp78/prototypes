@@ -1,0 +1,288 @@
+.ipWidget-Scoreboard
+   .myl-module-scoreboard .board:after,
+.ipWidget-Scoreboard
+   .myl-module-scoreboard .classicBoard:after {
+   content: "Scoreboard";
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard {
+    overflow: hidden;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .game {
+    background: #f4f4f4;
+    display: none;
+    position: relative;
+    height: 100%;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .game.active {
+    display: block;
+    z-index: 5;
+    position: relative;
+}
+.ipWidget-Score
+    .myl-module-scoreboard .game .board {
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Fjalla One';
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .game .board:after {
+    bottom: -30px;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .header {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 15px;
+    background: -webkit-gradient(linear, left top, left bottom,
+        color-stop(8%,rgba(69,72,77,1)),
+        color-stop(19%,rgba(69,72,77,1)),
+        color-stop(100%,rgba(0,0,0,1))
+    ); /* Chrome,Safari4+ */
+    background: linear-gradient(to bottom,
+        rgba(69,72,77,1) 8%,
+        rgba(69,72,77,1) 19%,
+        rgba(0,0,0,1) 100%
+    ); /* W3C */
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .header .date {
+    display: inline-block;
+    width: 49%;
+    float: left;
+    text-align: left;
+    color: #ffffff;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .header .total {
+    display: inline-block;
+    width: 25%;
+    float: right;
+    color: #ffffff;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .homeTeam,
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .awayTeam {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    padding: 10px 15px 10px 15px;
+    background: -webkit-gradient(linear, left top, left bottom,
+        color-stop(0%,rgba(0,0,0,0)),
+        color-stop(26%,rgba(58,58,58,0)),
+        color-stop(100%,rgba(224,224,224,0.65))
+    ); /* Chrome,Safari4+ */
+    background: linear-gradient(to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(58,58,58,0) 26%,
+        rgba(224,224,224,0.65) 100%
+    ); /* W3C */
+    border-bottom: 1px solid #dfdfdf;
+    -webkit-box-shadow:inset 0 0 1px 1px #fff;
+    box-shadow:inset 0 0 1px 1px #fff;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .image {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    float: left;
+}
+
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .team {
+    float: left;
+    height: 25px;
+    margin-left: 5px;
+    line-height: 25px;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .options {
+    float: right;
+    width: 50px;
+    height: 30px;
+    line-height: 24px;
+    margin-right: 5px;
+    margin-top: 6px;
+    text-align: right;
+    font-family: 'entypo';
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .icon {
+    display: inline-block;
+    width: 18;
+    height: 30px;
+    color: rgba(50,50,100,0.2);
+    font-size: 30px;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .options .icon.own {
+    color: rgba(50,50,100,0.9);
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .homeTeam .score,
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board .awayTeam .score {
+    float: right;
+    height: 50px;
+    border-radius: 3px;
+    color: rgba(0,0,0,0.9);
+    display: block;
+    width: 25%;
+    line-height: 50px;
+    font-size: 40px;
+}
+.ipWidget-Scoreboard
+    .myl-module-scoreboard .board div span {
+    color: #000000;
+    height: 100%;
+}
+
+/**
+ * Classic score board
+ */
+.ipWidget-Scoreboard
+    .classicBoard {
+    background-color: black;
+    display: none;
+    height: auto;
+    width: calc(100% - 5px);
+    text-align: center;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+}
+.ipWidget-Scoreboard
+    .classicBoard.active {
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicDateBox {
+    font-size: 40px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #ffffff;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    background-color: #4F4F4F;
+    width: 40%;
+    height: 25%;
+    max-height: 60px;
+    float: none;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicLabelDate {
+    font-size: 20px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #ffffff;
+    width: 100%;
+    float: none;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicLabel {
+    margin-top: 1%;
+    font-size: 20px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #ffffff;
+    width: 30%;
+    float: none;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicScoreRow .classicScoreBox {
+    font-size: 60px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background-color: #4F4F4F;
+    width: 35%;
+    height: 100%;
+    float: none;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicScoreRow .classicMiddleBox {
+    width: 20%;
+    height:100%;
+    float: none;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicScoreRow .classicMiddleBox .classicWinLabel {
+    color: #ffffff;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 15px;
+    width: 100%;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicScoreRow .classicMiddleBox .classicWinCircle {
+    width: 30%;
+    border: 2px solid #FFFFFF;
+    background-color: yellow;
+    border-radius: 100%;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicScoreRow .classicMiddleBox .classicWinMiddle {
+    width: 20%;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicScoreRow .classicMiddleBox .classicLoseCircle {
+    width: 30%;
+    border: 2px solid #FFFFFF;
+    border-radius: 100%;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicScoreRow {
+    margin-top: 2%;
+    width: 100%;
+    height: 35%;
+    max-height: 90px;
+    float: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicTeamRow {
+    margin-top: 2%;
+    width: 100%;
+    height:10%;
+    float: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicTeamRow .classicTeamName{
+    font-size: 20px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #ffffff;
+    width: 37%;
+    height: 100%;
+    float: none;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .classicTeamRow .classicTeamMiddle{
+    width: 16%;
+    height: 100%;
+    float: none;
+    display: inline-block;
+}
+.ipWidget-Scoreboard
+    .classicBoard .team-logo {
+    width: 20%;
+}
+.ipWidget-Scoreboard
+    .myl-module .board div.no-game {
+    overflow-y: auto;
+}

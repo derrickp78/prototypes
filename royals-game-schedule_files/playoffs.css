@@ -1,0 +1,16 @@
+.ipWidget-Playoffs
+    .myl-module-playoffs .playMod:after {
+    content: "Playoffs";
+}
+.ipWidget-Playoffs
+    .myl-module-playoffs:hover .playMod:after {
+    content: "";
+}
+.ipWidget-Playoffs
+    .myl-module-playoffs .playMod {
+    height: 100%;  
+}
+.ipWidget-Playoffs
+    .myl-module-playoffs .playoffModule {
+    height:100%;    
+}

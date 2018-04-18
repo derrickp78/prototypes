@@ -1,0 +1,60 @@
+.ipWidget-Standings
+   .myl-module .standing:after {
+   content: "Standings";
+}
+.ipWidget-Standings
+    .myl-module-standings.column {
+    text-align: left;
+}
+.ipWidget-Standings
+    .myl-module-standings .column-headers {
+    font-family: 'Fjalla One';
+    text-align: left;
+    color: rgba(50,50,100,0.7);
+}
+.ipWidget-Standings
+    .myl-module-standings .column span {
+    display: inline-block;
+    width: 8%;
+    text-align: right;
+    font-size: 12pt;
+}
+.ipWidget-Standings
+    .myl-module-standings .column span:nth-child(1) {
+    display: inline-block;
+    margin-left: 2%;
+    width: 66%;
+    text-align: left;
+    font-size: 20px;
+}
+.ipWidget-Standings
+    .myl-module-standings .column-data {
+    font-family: 'Fjalla One';
+    text-align: left;
+    border: 1px solid rgb(168, 168, 168);
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(100,100,100,0) 26%,
+        rgba(150,150,150,0.65) 100%
+    );
+}
+.ipWidget-Standings
+    .myl-module-standings .column-data span.team {
+    font-size: 16px;
+}
+.ipWidget-Standings
+    .myl-module-standings .wins {
+    color: blue;
+}
+.ipWidget-Standings
+    .myl-module-standings .losses {
+    color: red;
+}
+.ipWidget-Standings
+    .myl-module-standings .standing {
+    background: #f4f4f4;
+    min-height: 250px;
+    height: 100%;
+    overflow-y: auto;
+}

@@ -1,0 +1,10 @@
+.ipWidget-Donations
+   .myl-module .donations:after {
+   content: "Donations";
+}
+.ipWidget-Donations
+    .myl-module-donations .donations {
+    height: 100%;
+    background: #FFFFFF;
+    overflow-y: auto;
+}

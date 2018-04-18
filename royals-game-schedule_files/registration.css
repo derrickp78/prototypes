@@ -1,0 +1,11 @@
+.ipWidget-Registration
+   .myl-module .registration:after {
+   content: "Registration";
+}
+.ipWidget-Registration
+    .myl-module-registration .registration {
+    background: #f4f4f4;
+    font-family: 'Fjalla One';
+    font-size: 25px;
+    border:1px solid black;
+} 

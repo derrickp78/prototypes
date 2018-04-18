@@ -1,0 +1,120 @@
+.ipWidget-Scheduling
+   .myl-module-scheduling .schedule:after {
+   content: "Scheduling";
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .game {
+    display: none;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .game.active {
+    display: block;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule ul.list-group {
+    margin: 0px;
+    list-style: none;
+}
+/* Shrink pattern border */
+.ipWidget-Scheduling
+    .myl-module.myl-module-scheduling {
+    background-size: 4px 4px, 4px 4px, 100% 100%;
+    background-position: 0px 0px, 2px 2px, 0px 0px;
+}
+.ipWidget-Scheduling
+    .myl-module.myl-module-scheduling hr {
+    margin-top: 5px;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule hr {
+    margin: 0;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule {
+    font-size: 14px;
+    font-family: 'Glegoo';
+    text-align: left;
+    background: #f4f4f4;
+    height: 100%;
+    min-height: 250px;
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .date-group {
+    display: inline-block;
+    text-align: left;
+    padding-left: 2%;
+    width: 100%;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 18px;
+    color: rgba(50,50,100,0.7);
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .time-group {
+    display: inline-block;
+    width: 98%;
+    font-family: 'Fjalla One', sans-serif;
+    color: rgba(50,50,100,0.6);
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .time-group .time-label {
+        float: right;
+        padding-left: 3px;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .time-group .rsc-label {
+        float: left;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .list-group-item {
+    display: inline-block;
+    width: calc(100% - 10px);
+    padding: 10px 5px;
+    margin-bottom: -6px;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .list-group-item:after {
+    position: absolute;
+    display: block;
+    width: 30px;
+    content: "VS";
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    font-size: 30px;
+    font-family: Impact;
+    opacity: 0.1;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .teams {
+    display: inline-block;
+    width: 25%;
+    height: 32px;
+    font-size: 20px;
+    line-height: 32px;
+    overflow: hidden;
+    margin-top: 1px;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .image {
+    display: inline-block;
+    height: 34px;
+    width: 34px;
+    overflow: hidden;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .home-team {
+    float: right;
+    color: blue;
+    text-align: right;
+    margin-right: 5px;
+}
+.ipWidget-Scheduling
+    .myl-module-scheduling .schedule .away-team {
+    float: left;
+    color: red;
+    text-align: left;
+    margin-left: 5px;
+}
